@@ -8,7 +8,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:json_class/json_class.dart';
-import 'package:json_theme_plus/json_theme.dart';
+import 'package:json_theme_plus/json_theme_plus.dart';
 import 'package:logging/logging.dart';
 
 import 'base64_image.dart';
