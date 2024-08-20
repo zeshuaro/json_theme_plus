@@ -33,6 +33,14 @@ The decodes utilize a JSON Schema validator to ensure the JSON is well formed.  
 
 Because this library allows for icons to be dynamically referenced, Flutter cannot tree shake icons because it has no way of knowing what icons may or may not be referenced.  If you include this library, then you will need to add the `--no-tree-shake-icons` flag to your Flutter build or you will get an error stating that Flutter cannot tree shake the icons.
 
+## Getting Started
+
+Add this to your project's `pubspec.yaml` file:
+
+```yml
+dependencies:
+  json_theme_plus: ^6.5.0+1
+```
 
 # Live Example
 
