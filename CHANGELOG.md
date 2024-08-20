@@ -1,3 +1,22 @@
+## [6.6.0](https://github.com/zeshuaro/json_theme_plus/compare/v6.5.0+1...v6.6.0) (2024-08-20)
+
+### Features
+
+* **sdk:** update to support flutter 3.24 ([#3](https://github.com/zeshuaro/json_theme_plus/issues/3)) ([46af1ad](https://github.com/zeshuaro/json_theme_plus/commit/46af1ad1c8c693ccf2078ca4d871b604988c601d))
+
+### Bug Fixes
+
+* rename `lib/json_theme` to `json_theme_plus` ([#4](https://github.com/zeshuaro/json_theme_plus/issues/4)) ([0a27e44](https://github.com/zeshuaro/json_theme_plus/commit/0a27e44bdb38878fb95e53f5fcad6cf4a303b6f4))
+
+### Documentation
+
+* **readme:** add getting started section ([#6](https://github.com/zeshuaro/json_theme_plus/issues/6)) ([ac549ab](https://github.com/zeshuaro/json_theme_plus/commit/ac549ab2dac7bf706868312f8860c89690bfac84))
+
+### Continuous Integration
+
+* **github-actions:** add pull request and scheduled workflows ([#2](https://github.com/zeshuaro/json_theme_plus/issues/2)) ([4c4a95e](https://github.com/zeshuaro/json_theme_plus/commit/4c4a95ebea20911c027f9d3489de9529f43dcab1))
+* setup semantic release ([#5](https://github.com/zeshuaro/json_theme_plus/issues/5)) ([2549726](https://github.com/zeshuaro/json_theme_plus/commit/2549726419fcc36b7f2f7e4601182750361ab764))
+
 ## [6.5.0+1] - May 14th, 2024
 
 * Swapped MaterialStateProperty with WidgetStateProperty in preperation for other Flutter 3.22 work.
@@ -641,44 +660,3 @@
 * ~~**TODO**: Documentation~~
 * ~~**TODO**: Example App~~
 * ~~**TODO**: Unit Tests~~
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
