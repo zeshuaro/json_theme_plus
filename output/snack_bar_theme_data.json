@@ -1,0 +1,103 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://peiffer-innovations.github.io/flutter_json_schemas/schemas/json_theme/snack_bar_theme_data.json",
+  "$comment": "https://api.flutter.dev/flutter/material/SnackBarThemeData-class.html",
+  "title": "SnackBarThemeData",
+  "type": "object",
+  "properties": {
+    "actionBackgroundColor": {
+      "$ref": "https://peiffer-innovations.github.io/flutter_json_schemas/schemas/json_theme/color.json"
+    },
+    "actionOverflowThreshold": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "number"
+        }
+      ]
+    },
+    "actionTextColor": {
+      "$ref": "https://peiffer-innovations.github.io/flutter_json_schemas/schemas/json_theme/color.json"
+    },
+    "backgroundColor": {
+      "$ref": "https://peiffer-innovations.github.io/flutter_json_schemas/schemas/json_theme/color.json"
+    },
+    "behavior": {
+      "$ref": "https://peiffer-innovations.github.io/flutter_json_schemas/schemas/json_theme/snack_bar_behavior.json"
+    },
+    "closeIconColor": {
+      "$ref": "https://peiffer-innovations.github.io/flutter_json_schemas/schemas/json_theme/color.json"
+    },
+    "contentTextStyle": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "$ref": "https://peiffer-innovations.github.io/flutter_json_schemas/schemas/json_theme/text_style.json"
+        }
+      ]
+    },
+    "disabledActionBackgroundColor": {
+      "$ref": "https://peiffer-innovations.github.io/flutter_json_schemas/schemas/json_theme/color.json"
+    },
+    "disabledActionTextColor": {
+      "$ref": "https://peiffer-innovations.github.io/flutter_json_schemas/schemas/json_theme/color.json"
+    },
+    "elevation": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "number"
+        }
+      ]
+    },
+    "insetPadding": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "$ref": "https://peiffer-innovations.github.io/flutter_json_schemas/schemas/json_theme/edge_insets_geometry.json"
+        }
+      ]
+    },
+    "shape": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "$ref": "https://peiffer-innovations.github.io/flutter_json_schemas/schemas/json_theme/shape_border.json"
+        }
+      ]
+    },
+    "showCloseIcon": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "boolean"
+        }
+      ]
+    },
+    "width": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "number"
+        }
+      ]
+    }
+  }
+}

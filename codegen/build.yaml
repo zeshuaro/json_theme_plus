@@ -1,8 +1,0 @@
-builders:
-  decoder_builder:
-    import: 'package:json_theme_codegen/builder.dart'
-    builder_factories: ['codecLibrary']
-    build_extensions: { '.dart': ['codec.g.part'] }
-    auto_apply: dependents
-    build_to: source
-    # applies_builders: ['source_gen|combining_builder']
