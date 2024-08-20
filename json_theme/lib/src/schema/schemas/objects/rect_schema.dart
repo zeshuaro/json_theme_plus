@@ -25,7 +25,7 @@ class RectSchema {
               'dx',
               'dy',
             ],
-            'additionaProperties': false,
+            'additionalProperties': false,
             'properties': {
               'dx': SchemaHelper.numberSchema,
               'dy': SchemaHelper.numberSchema,

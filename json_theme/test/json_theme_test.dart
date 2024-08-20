@@ -3191,7 +3191,7 @@ void main() {
       },
     );
 
-    bool? elevatedButtonThemeDatasAreEqual(Object? first, Object second) {
+    bool? elevatedButtonThemeDataAreEqual(Object? first, Object second) {
       bool? result;
 
       if (first.runtimeType != second.runtimeType) {
@@ -3206,7 +3206,7 @@ void main() {
     }
 
     expect(
-      elevatedButtonThemeDatasAreEqual(decoded, entry),
+      elevatedButtonThemeDataAreEqual(decoded, entry),
       true,
     );
   });
@@ -6526,7 +6526,7 @@ void main() {
       },
     );
 
-    bool? outlinedButtonThemeDatasAreEqual(Object? first, Object second) {
+    bool? outlinedButtonThemeDataAreEqual(Object? first, Object second) {
       bool? result;
 
       if (first.runtimeType != second.runtimeType) {
@@ -6541,7 +6541,7 @@ void main() {
     }
 
     expect(
-      outlinedButtonThemeDatasAreEqual(decoded, entry),
+      outlinedButtonThemeDataAreEqual(decoded, entry),
       true,
     );
   });
@@ -9367,7 +9367,7 @@ void main() {
       },
     );
 
-    bool? textButtonThemeDatasAreEqual(Object? first, Object second) {
+    bool? textButtonThemeDataAreEqual(Object? first, Object second) {
       bool? result;
 
       if (first.runtimeType != second.runtimeType) {
@@ -9382,7 +9382,7 @@ void main() {
     }
 
     expect(
-      textButtonThemeDatasAreEqual(decoded, entry),
+      textButtonThemeDataAreEqual(decoded, entry),
       true,
     );
   });

@@ -5026,7 +5026,7 @@ class ThemeEncoder {
 
       if (type == null) {
         throw Exception(
-            'Unknown ScrollPhysics class encounted: ${value.runtimeType}');
+            'Unknown ScrollPhysics class encountered: ${value.runtimeType}');
       }
       result = {
         'parent': encodeScrollPhysics(value.parent),
@@ -5146,7 +5146,7 @@ class ThemeEncoder {
     return _stripDynamicNull(result);
   }
 
-  /// Encodes the given [value] to the JSON representation  This provies the
+  /// Encodes the given [value] to the JSON representation. This provides the
   /// given [value] to follow the structure below:
   ///
   /// ```json
@@ -7105,7 +7105,7 @@ class ThemeEncoder {
         'checkboxTheme': encodeCheckboxThemeData(value.checkboxTheme),
         'chipTheme': encodeChipThemeData(value.chipTheme),
         'colorScheme': encodeColorScheme(value.colorScheme),
-        // 'colorSchemeSeed': @nonexistant,
+        // 'colorSchemeSeed': @nonexistent,
         'cupertinoOverrideTheme': encodeCupertinoThemeData(
           value.cupertinoOverrideTheme,
         ),
