@@ -1,3 +1,33 @@
+## [6.6.1](https://github.com/zeshuaro/json_theme_plus/compare/v6.6.0...v6.6.1) (2024-08-26)
+
+### Bug Fixes
+
+* **deps:** update dependency json_schema to ^5.2.0 ([#22](https://github.com/zeshuaro/json_theme_plus/issues/22)) ([4c4c7e9](https://github.com/zeshuaro/json_theme_plus/commit/4c4c7e93adaaceb382b3f4fe8877d247489ea79f))
+* **sdk:** update dependency dart to >=3.2.6 <4.0.0 ([#16](https://github.com/zeshuaro/json_theme_plus/issues/16)) ([0391d17](https://github.com/zeshuaro/json_theme_plus/commit/0391d17bf38fdf61cd89b50f674ea244de9fc12a))
+* **sdk:** update dependency dart to >=3.5.1 <4.0.0 ([#23](https://github.com/zeshuaro/json_theme_plus/issues/23)) ([7a60044](https://github.com/zeshuaro/json_theme_plus/commit/7a60044722a9620c26aaaf4773e2268fdbd0ba85))
+* **sdk:** update dependency flutter to v3.24.1 ([#17](https://github.com/zeshuaro/json_theme_plus/issues/17)) ([b3fb0eb](https://github.com/zeshuaro/json_theme_plus/commit/b3fb0eb25999bda5cdbd98682f56c5d443fb378c))
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#25](https://github.com/zeshuaro/json_theme_plus/issues/25)) ([0062b28](https://github.com/zeshuaro/json_theme_plus/commit/0062b280c31d3d353f5120430f6b14a933c15317))
+* **deps:** pin dependencies ([#10](https://github.com/zeshuaro/json_theme_plus/issues/10)) ([0d97c08](https://github.com/zeshuaro/json_theme_plus/commit/0d97c08253c4c9cc2e0ef80ab16b8cdb86c0007e))
+* **deps:** remove unused dev dependency `analyzer` ([#12](https://github.com/zeshuaro/json_theme_plus/issues/12)) ([418f8e8](https://github.com/zeshuaro/json_theme_plus/commit/418f8e8ff08182c71c8fb2e3263c869b518d7af8))
+* **deps:** update dependency semantic-release to v24.1.0 ([#18](https://github.com/zeshuaro/json_theme_plus/issues/18)) ([3ba44ab](https://github.com/zeshuaro/json_theme_plus/commit/3ba44ab563e98dbcb2a90d8813df381ef80bf2d1))
+* **deps:** update dependency semantic-release-pub to v0.8.23 ([#13](https://github.com/zeshuaro/json_theme_plus/issues/13)) ([5bde94c](https://github.com/zeshuaro/json_theme_plus/commit/5bde94cf66bace16d4b7a044f134f6a1c857d647))
+* **example/deps:** pin dependency flutter_lints to 4.0.0 ([#11](https://github.com/zeshuaro/json_theme_plus/issues/11)) ([efccd30](https://github.com/zeshuaro/json_theme_plus/commit/efccd30b0b1079c679050b50953aa456a5fde1db))
+* **example/deps:** update dependency dart to >=3.3.4 <4.0.0 ([#14](https://github.com/zeshuaro/json_theme_plus/issues/14)) ([b7cea26](https://github.com/zeshuaro/json_theme_plus/commit/b7cea267426035821fe36a7e7755daa9262adba4))
+* **example/deps:** update dependency dart to >=3.5.1 <4.0.0 ([#19](https://github.com/zeshuaro/json_theme_plus/issues/19)) ([948f29a](https://github.com/zeshuaro/json_theme_plus/commit/948f29a8bd8d3691a8675a595298741c6033e6a2))
+* **node:** update dependency node to v20.17.0 ([#20](https://github.com/zeshuaro/json_theme_plus/issues/20)) ([e24b51a](https://github.com/zeshuaro/json_theme_plus/commit/e24b51acd7eea7c3b91e132bd5c6e61da901c871))
+* **pubspec:** remove all quotes in versioning ([#26](https://github.com/zeshuaro/json_theme_plus/issues/26)) ([17ba505](https://github.com/zeshuaro/json_theme_plus/commit/17ba505970c3eeb581c14773182ab7d549020def))
+* **pubspec:** update version to 6.6.0 ([#7](https://github.com/zeshuaro/json_theme_plus/issues/7)) ([c6b8168](https://github.com/zeshuaro/json_theme_plus/commit/c6b8168baa7e1309036a56e2e0726e572705fdc1))
+
+### Continuous Integration
+
+* **deps:** update zeshuaro/github-actions-workflows digest to 5e6badf ([#21](https://github.com/zeshuaro/json_theme_plus/issues/21)) ([1e612df](https://github.com/zeshuaro/json_theme_plus/commit/1e612df696c720465100f5c3f9f02c9aadfe02ab))
+* **deps:** update zeshuaro/github-actions-workflows digest to bf01d5e ([#24](https://github.com/zeshuaro/json_theme_plus/issues/24)) ([4551e6e](https://github.com/zeshuaro/json_theme_plus/commit/4551e6ede8d93fd5785ed221145819dc42484894))
+* **deps:** update zeshuaro/github-actions-workflows digest to e887a1d ([#15](https://github.com/zeshuaro/json_theme_plus/issues/15)) ([5f5bcd2](https://github.com/zeshuaro/json_theme_plus/commit/5f5bcd2dca276cf171419689137f3d31eeee87f8))
+* setup renovate ([#8](https://github.com/zeshuaro/json_theme_plus/issues/8)) ([1625b9a](https://github.com/zeshuaro/json_theme_plus/commit/1625b9a22545d07b5a7e4ef87c0dc87458ed9062))
+
 ## [6.6.0](https://github.com/zeshuaro/json_theme_plus/compare/v6.5.0+1...v6.6.0) (2024-08-20)
 
 ### Features
