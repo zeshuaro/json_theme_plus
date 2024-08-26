@@ -1,7 +1,7 @@
-name: "json_theme_plus"
-description: "A library to dynamically generate a ThemeData object from a JSON file or dynamic map object"
-homepage: "https://github.com/zeshuaro/json_theme_plus"
-version: "6.6.0"
+name: json_theme_plus
+description: A library to dynamically generate a ThemeData object from a JSON file or dynamic map object
+homepage: https://github.com/zeshuaro/json_theme_plus
+version: 6.6.0
 
 environment:
   sdk: ">=3.5.1 <4.0.0"
@@ -9,20 +9,20 @@ environment:
 
 dependencies:
   flutter:
-    sdk: "flutter"
-  json_class: "^3.0.0+13"
-  json_schema: "^5.2.0"
-  json_theme_annotation: "^1.0.3+6"
-  logging: "^1.2.0"
-  meta: "^1.12.0"
+    sdk: flutter
+  json_class: ^3.0.0+13
+  json_schema: ^5.2.0
+  json_theme_annotation: ^1.0.3+6
+  logging: ^1.2.0
+  meta: ^1.12.0
 
 dev_dependencies:
-  build: "2.4.1"
-  build_runner: "2.4.12"
-  code_builder: "4.10.0"
-  flutter_lints: "4.0.0"
+  build: 2.4.1
+  build_runner: 2.4.12
+  code_builder: 4.10.0
+  flutter_lints: 4.0.0
   flutter_test:
-    sdk: "flutter"
-  json_theme_codegen: "1.1.2"
-  recase: "4.1.0"
-  source_gen: "1.5.0"
+    sdk: flutter
+  json_theme_codegen: 1.1.2
+  recase: 4.1.0
+  source_gen: 1.5.0
