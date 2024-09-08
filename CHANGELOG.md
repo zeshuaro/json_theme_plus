@@ -1,3 +1,24 @@
+## [6.6.2](https://github.com/zeshuaro/json_theme_plus/compare/v6.6.1...v6.6.2) (2024-09-08)
+
+### Bug Fixes
+
+* **sdk:** update dependency dart to >=3.5.2 <4.0.0 ([#30](https://github.com/zeshuaro/json_theme_plus/issues/30)) ([a1053c0](https://github.com/zeshuaro/json_theme_plus/commit/a1053c02c9e86db7999198420e80e7f37f95d8fa))
+* **sdk:** update dependency flutter to v3.24.2 ([#35](https://github.com/zeshuaro/json_theme_plus/issues/35)) ([e401c04](https://github.com/zeshuaro/json_theme_plus/commit/e401c04e523f196eaddb80654e9e11586fb0e869))
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#32](https://github.com/zeshuaro/json_theme_plus/issues/32)) ([ce476fc](https://github.com/zeshuaro/json_theme_plus/commit/ce476fc550d0323a42372075131be9ee49125537))
+* **deps:** update dependency semantic-release-pub to v0.8.24 ([#28](https://github.com/zeshuaro/json_theme_plus/issues/28)) ([ccb9ba6](https://github.com/zeshuaro/json_theme_plus/commit/ccb9ba67cf279b6995002dcc635d47d1af315ebc))
+* **deps:** update dependency semantic-release-pub to v0.8.25 ([#34](https://github.com/zeshuaro/json_theme_plus/issues/34)) ([553b93b](https://github.com/zeshuaro/json_theme_plus/commit/553b93b5a81565f8b1a517bdeb4bd3c18934a566))
+* **example/deps:** update dependency dart to >=3.5.2 <4.0.0 ([#29](https://github.com/zeshuaro/json_theme_plus/issues/29)) ([fd04d25](https://github.com/zeshuaro/json_theme_plus/commit/fd04d2521f75d33e03f0287520c558185b229e15))
+
+### Continuous Integration
+
+* **deps:** update zeshuaro/github-actions-workflows digest to 85a09fd ([#27](https://github.com/zeshuaro/json_theme_plus/issues/27)) ([54ca21a](https://github.com/zeshuaro/json_theme_plus/commit/54ca21a9eec23d25e7ed4aa08e2a744834a791a9))
+* **deps:** update zeshuaro/github-actions-workflows digest to c77b64e ([#31](https://github.com/zeshuaro/json_theme_plus/issues/31)) ([8625367](https://github.com/zeshuaro/json_theme_plus/commit/8625367a5a6dfe77394d5d3da293a3381f134502))
+* **deps:** update zeshuaro/github-actions-workflows digest to f863fab ([#36](https://github.com/zeshuaro/json_theme_plus/issues/36)) ([5e2a5a0](https://github.com/zeshuaro/json_theme_plus/commit/5e2a5a022e79449a4ed18cb1bae24d59523d7817))
+* **deps:** update zeshuaro/github-actions-workflows digest to f8b2b07 ([#33](https://github.com/zeshuaro/json_theme_plus/issues/33)) ([0ea2480](https://github.com/zeshuaro/json_theme_plus/commit/0ea2480455b947759cde222922411c276d1b3cbd))
+
 ## [6.6.1](https://github.com/zeshuaro/json_theme_plus/compare/v6.6.0...v6.6.1) (2024-08-26)
 
 ### Bug Fixes
