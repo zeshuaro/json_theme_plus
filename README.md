@@ -39,7 +39,7 @@ Add this to your project's `pubspec.yaml` file:
 
 ```yml
 dependencies:
-  json_theme_plus: ^6.6.3
+  json_theme_plus: ^6.6.4
 ```
 
 # Live Example
