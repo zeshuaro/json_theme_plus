@@ -20,7 +20,7 @@ dev_dependencies:
   build: 2.4.1
   build_runner: 2.4.13
   code_builder: 4.10.0
-  flutter_lints: 4.0.0
+  flutter_lints: 5.0.0
   flutter_test:
     sdk: flutter
   json_theme_codegen: 1.1.3
