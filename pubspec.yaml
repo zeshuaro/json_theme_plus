@@ -1,7 +1,7 @@
 name: json_theme_plus
 description: A library to dynamically generate a ThemeData object from a JSON file or dynamic map object
 homepage: https://github.com/zeshuaro/json_theme_plus
-version: 6.6.4
+version: 6.6.5
 
 environment:
   sdk: ">=3.5.4 <4.0.0"
