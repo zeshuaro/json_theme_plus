@@ -1,3 +1,30 @@
+## [6.6.6](https://github.com/zeshuaro/json_theme_plus/compare/v6.6.5...v6.6.6) (2024-12-08)
+
+### Bug Fixes
+
+* **deps:** update dependency json_class to ^3.0.1 ([#100](https://github.com/zeshuaro/json_theme_plus/issues/100)) ([3773b29](https://github.com/zeshuaro/json_theme_plus/commit/3773b29a58bbf26424e88fb60ff9309b4b543066))
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#86](https://github.com/zeshuaro/json_theme_plus/issues/86)) ([cdc2f6f](https://github.com/zeshuaro/json_theme_plus/commit/cdc2f6f7b04bf5513ea019c0111fcfe21099a756))
+* **deps:** lock file maintenance ([#90](https://github.com/zeshuaro/json_theme_plus/issues/90)) ([e7f53ae](https://github.com/zeshuaro/json_theme_plus/commit/e7f53ae25802de323b89918adb8aba462ac94e2e))
+* **deps:** lock file maintenance ([#94](https://github.com/zeshuaro/json_theme_plus/issues/94)) ([178ac00](https://github.com/zeshuaro/json_theme_plus/commit/178ac00d66fe1f089b95004b5f867d26a78063a4))
+* **deps:** update dependency semantic-release-pub to v0.9.1 ([#93](https://github.com/zeshuaro/json_theme_plus/issues/93)) ([30cefe4](https://github.com/zeshuaro/json_theme_plus/commit/30cefe4adad87bca8887a39938de1f7d5cff76a2))
+* **example/deps:** update dependency form_validation to ^3.2.0 ([#101](https://github.com/zeshuaro/json_theme_plus/issues/101)) ([5de5094](https://github.com/zeshuaro/json_theme_plus/commit/5de5094b908f21ac8273b9b174d963df0e3b3d11))
+* **example/deps:** update dependency intl to ^0.20.0 ([#88](https://github.com/zeshuaro/json_theme_plus/issues/88)) ([1de876b](https://github.com/zeshuaro/json_theme_plus/commit/1de876b83963dc533d3d7f4e50f52bd1f068b7c7))
+* **example/deps:** update dependency intl to ^0.20.1 ([#99](https://github.com/zeshuaro/json_theme_plus/issues/99)) ([b9479eb](https://github.com/zeshuaro/json_theme_plus/commit/b9479ebfd4ad1900808683d0367ad8d34eb24dcf))
+* **node:** update node.js to v22.12.0 ([#96](https://github.com/zeshuaro/json_theme_plus/issues/96)) ([927c86b](https://github.com/zeshuaro/json_theme_plus/commit/927c86bcfe4fb2abc464b89b9599b807fb354cdb))
+
+### Continuous Integration
+
+* **deps:** update zeshuaro/github-actions-workflows digest to 02e8a2b ([#89](https://github.com/zeshuaro/json_theme_plus/issues/89)) ([0b2903d](https://github.com/zeshuaro/json_theme_plus/commit/0b2903d29d59032171186de29f219edfce7ad4e1))
+* **deps:** update zeshuaro/github-actions-workflows digest to 4d64095 ([#95](https://github.com/zeshuaro/json_theme_plus/issues/95)) ([c9a6395](https://github.com/zeshuaro/json_theme_plus/commit/c9a6395c8eb28142d9e5eb790da548ccd241ee1e))
+* **deps:** update zeshuaro/github-actions-workflows digest to 9fdeb67 ([#87](https://github.com/zeshuaro/json_theme_plus/issues/87)) ([e790589](https://github.com/zeshuaro/json_theme_plus/commit/e7905895ff87ad97cf0db6b34f2591ccd1a1ab1a))
+* **deps:** update zeshuaro/github-actions-workflows digest to ae58d06 ([#92](https://github.com/zeshuaro/json_theme_plus/issues/92)) ([0f88c34](https://github.com/zeshuaro/json_theme_plus/commit/0f88c34605628e5bbdb73cdb337cc13e2aabdad2))
+* **deps:** update zeshuaro/github-actions-workflows digest to aeb0e34 ([#91](https://github.com/zeshuaro/json_theme_plus/issues/91)) ([e10c197](https://github.com/zeshuaro/json_theme_plus/commit/e10c19743c904686244f9929c50a89c9d338f2c5))
+* **deps:** update zeshuaro/github-actions-workflows digest to b3246c8 ([#97](https://github.com/zeshuaro/json_theme_plus/issues/97)) ([ae1ed98](https://github.com/zeshuaro/json_theme_plus/commit/ae1ed98f08dc3cddba81823d56899c8ed4d57967))
+* **deps:** update zeshuaro/github-actions-workflows digest to e9ba948 ([#98](https://github.com/zeshuaro/json_theme_plus/issues/98)) ([1dbf8a1](https://github.com/zeshuaro/json_theme_plus/commit/1dbf8a1824b38672eeba1ffcb0fb7e6c958cbb27))
+
 ## [6.6.5](https://github.com/zeshuaro/json_theme_plus/compare/v6.6.4...v6.6.5) (2024-11-17)
 
 ### Bug Fixes

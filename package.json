@@ -1,6 +1,6 @@
 {
   "name": "json_theme_plus",
-  "version": "6.6.5",
+  "version": "6.6.6",
   "description": "A library to dynamically generate a ThemeData object from a JSON file or dynamic map object",
   "main": "index.js",
   "repository": "https://github.com/zeshuaro/json_theme_plus",
