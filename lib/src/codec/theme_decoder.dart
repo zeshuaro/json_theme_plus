@@ -12558,8 +12558,8 @@ class ThemeDecoder {
           value['cardColor'],
           validate: false,
         ),
-        cardThemeData: decodeCardTheme(
-          value['cardThemeData'],
+        cardTheme: decodeCardTheme(
+          value['cardTheme'],
           validate: false,
         ),
         checkboxTheme: decodeCheckboxThemeData(
@@ -12594,7 +12594,7 @@ class ThemeDecoder {
           value['dialogBackgroundColor'],
           validate: false,
         ),
-        dialogThemeData: decodeDialogTheme(
+        dialogTheme: decodeDialogTheme(
           value['dialogThemeData'],
           validate: false,
         ),
@@ -12802,7 +12802,7 @@ class ThemeDecoder {
           value['switchTheme'],
           validate: false,
         ),
-        tabBarThemeData: decodeTabBarTheme(
+        tabBarTheme: decodeTabBarTheme(
           value['tabBarThemeData'],
           validate: false,
         ),

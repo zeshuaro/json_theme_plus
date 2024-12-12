@@ -2825,7 +2825,7 @@ void main() {
     );
   });
 
-  test('DialogThemeData', () {
+  test('DialogTheme', () {
     expect(ThemeDecoder.decodeDialogTheme(null), null);
     expect(ThemeEncoder.encodeDialogTheme(null), null);
 
@@ -8888,7 +8888,7 @@ void main() {
     );
   });
 
-  test('TabBarThemeData', () {
+  test('TabBarTheme', () {
     expect(ThemeDecoder.decodeTabBarTheme(null), null);
     expect(ThemeEncoder.encodeTabBarTheme(null), null);
 
@@ -10232,7 +10232,7 @@ void main() {
       buttonBarTheme: const ButtonBarThemeData(buttonHeight: 3.0),
       canvasColor: const Color(0xffcccccc),
       cardColor: const Color(0xffdddddd),
-      cardThemeData: const CardThemeData(color: Color(0xffeeeeee)),
+      cardTheme: const CardThemeData(color: Color(0xffeeeeee)),
       checkboxTheme: CheckboxThemeData(
         fillColor: WidgetStateProperty.all(const Color(0xff123456)),
       ),
@@ -10280,7 +10280,7 @@ void main() {
         horizontalMargin: 1.0,
       ),
       dialogBackgroundColor: const Color(0xee888888),
-      dialogThemeData: const DialogThemeData(backgroundColor: Color(0xee999999)),
+      dialogTheme: const DialogThemeData(backgroundColor: Color(0xee999999)),
       disabledColor: const Color(0xee000000),
       dividerColor: const Color(0xeeaaaaaa),
       dividerTheme: const DividerThemeData(color: Color(0xeebbbbbb)),
@@ -10393,7 +10393,7 @@ void main() {
       switchTheme: SwitchThemeData(
         thumbColor: WidgetStateProperty.all(const Color(0xff123456)),
       ),
-      tabBarThemeData: const TabBarThemeData(labelColor: Color(0xccffffff)),
+      tabBarTheme: const TabBarThemeData(labelColor: Color(0xccffffff)),
       textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
           backgroundColor: WidgetStateProperty.all(
