@@ -1945,7 +1945,7 @@ void main() {
     expect(ThemeDecoder.decodeCardTheme(null), null);
     expect(ThemeEncoder.encodeCardTheme(null), null);
 
-    final entry = CardTheme(
+    final entry = CardThemeData(
       clipBehavior: Clip.hardEdge,
       color: const Color(0xff111111),
       elevation: 3.0,
@@ -2825,11 +2825,11 @@ void main() {
     );
   });
 
-  test('DialogTheme', () {
+  test('DialogThemeData', () {
     expect(ThemeDecoder.decodeDialogTheme(null), null);
     expect(ThemeEncoder.encodeDialogTheme(null), null);
 
-    const entry = DialogTheme(
+    const entry = DialogThemeData(
       actionsPadding: EdgeInsets.all(8.0),
       alignment: Alignment.bottomLeft,
       backgroundColor: _kColor,
@@ -8888,7 +8888,7 @@ void main() {
     );
   });
 
-  test('TabBarTheme', () {
+  test('TabBarThemeData', () {
     expect(ThemeDecoder.decodeTabBarTheme(null), null);
     expect(ThemeEncoder.encodeTabBarTheme(null), null);
 
@@ -8899,7 +8899,7 @@ void main() {
       // pass
     }
 
-    const entry = TabBarTheme(
+    const entry = TabBarThemeData(
       indicatorSize: TabBarIndicatorSize.label,
       labelColor: Color(0xff111111),
       labelPadding: EdgeInsets.all(1.0),
@@ -10232,7 +10232,7 @@ void main() {
       buttonBarTheme: const ButtonBarThemeData(buttonHeight: 3.0),
       canvasColor: const Color(0xffcccccc),
       cardColor: const Color(0xffdddddd),
-      cardTheme: const CardTheme(color: Color(0xffeeeeee)),
+      cardThemeData: const CardThemeData(color: Color(0xffeeeeee)),
       checkboxTheme: CheckboxThemeData(
         fillColor: WidgetStateProperty.all(const Color(0xff123456)),
       ),
@@ -10280,7 +10280,7 @@ void main() {
         horizontalMargin: 1.0,
       ),
       dialogBackgroundColor: const Color(0xee888888),
-      dialogTheme: const DialogTheme(backgroundColor: Color(0xee999999)),
+      dialogThemeData: const DialogThemeData(backgroundColor: Color(0xee999999)),
       disabledColor: const Color(0xee000000),
       dividerColor: const Color(0xeeaaaaaa),
       dividerTheme: const DividerThemeData(color: Color(0xeebbbbbb)),
@@ -10386,16 +10386,14 @@ void main() {
       scaffoldBackgroundColor: const Color(0xee666666),
       secondaryHeaderColor: const Color(0xccbbbbbb),
       shadowColor: const Color(0xcccccccc),
-      sliderTheme:
-          const SliderThemeData(activeTickMarkColor: Color(0xccdddddd)),
-      snackBarTheme:
-          const SnackBarThemeData(actionTextColor: Color(0xcceeeeee)),
+      sliderTheme: const SliderThemeData(activeTickMarkColor: Color(0xccdddddd)),
+      snackBarTheme: const SnackBarThemeData(actionTextColor: Color(0xcceeeeee)),
       splashColor: const Color(0xee444444),
       splashFactory: InkSplash.splashFactory,
       switchTheme: SwitchThemeData(
         thumbColor: WidgetStateProperty.all(const Color(0xff123456)),
       ),
-      tabBarTheme: const TabBarTheme(labelColor: Color(0xccffffff)),
+      tabBarThemeData: const TabBarThemeData(labelColor: Color(0xccffffff)),
       textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
           backgroundColor: WidgetStateProperty.all(
@@ -10583,7 +10581,7 @@ void main() {
         'horizontalMargin': 1.0,
       },
       'dialogBackgroundColor': '#ee888888',
-      'dialogTheme': {'backgroundColor': '#ee999999'},
+      'dialogThemeData': {'backgroundColor': '#ee999999'},
       'disabledColor': '#ee000000',
       'dividerColor': '#eeaaaaaa',
       'dividerTheme': {'color': '#eebbbbbb'},
