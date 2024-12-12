@@ -2825,7 +2825,7 @@ void main() {
     );
   });
 
-  test('DialogTheme', () {
+  test('dialogTheme', () {
     expect(ThemeDecoder.decodeDialogTheme(null), null);
     expect(ThemeEncoder.encodeDialogTheme(null), null);
 
@@ -10581,7 +10581,7 @@ void main() {
         'horizontalMargin': 1.0,
       },
       'dialogBackgroundColor': '#ee888888',
-      'dialogThemeData': {'backgroundColor': '#ee999999'},
+      'dialogTheme': {'backgroundColor': '#ee999999'},
       'disabledColor': '#ee000000',
       'dividerColor': '#eeaaaaaa',
       'dividerTheme': {'color': '#eebbbbbb'},

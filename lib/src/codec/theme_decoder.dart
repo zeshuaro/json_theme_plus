@@ -12595,7 +12595,7 @@ class ThemeDecoder {
           validate: false,
         ),
         dialogTheme: decodeDialogTheme(
-          value['dialogThemeData'],
+          value['dialogTheme'],
           validate: false,
         ),
         disabledColor: decodeColor(
@@ -12803,7 +12803,7 @@ class ThemeDecoder {
           validate: false,
         ),
         tabBarTheme: decodeTabBarTheme(
-          value['tabBarThemeData'],
+          value['tabBarTheme'],
           validate: false,
         ),
         textButtonTheme: decodeTextButtonThemeData(
