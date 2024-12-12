@@ -6630,7 +6630,6 @@ class ThemeDecoder {
         swatches,
       );
     }
-
     return result;
   }
 
