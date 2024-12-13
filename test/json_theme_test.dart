@@ -5084,6 +5084,7 @@ void main() {
     expect(ThemeDecoder.decodeMaterialColor(null), null);
     expect(ThemeEncoder.encodeMaterialColor(null), null);
 
+    // ignore: deprecated_member_use
     final entry = MaterialColor(_kColor.value, const {
       50: _kColor,
       100: _kColor,

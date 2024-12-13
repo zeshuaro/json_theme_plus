@@ -1526,6 +1526,7 @@ class ThemeEncoder {
     String? result;
 
     if (value != null) {
+      // ignore: deprecated_member_use
       final hex = value.value.toRadixString(16).padLeft(8, '0');
       result = '#$hex';
     }
@@ -3629,6 +3630,7 @@ class ThemeEncoder {
 
     if (value != null) {
       result = <String, dynamic>{
+        // ignore: deprecated_member_use
         'primary': encodeColor(Color(value.value)),
         'swatches': {
           '50': encodeColor(value.shade50),

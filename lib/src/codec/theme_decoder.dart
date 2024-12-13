@@ -6626,6 +6626,7 @@ class ThemeDecoder {
           value['primary'],
           validate: false,
         )!
+            // ignore: deprecated_member_use
             .value,
         swatches,
       );
