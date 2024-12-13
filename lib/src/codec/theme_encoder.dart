@@ -1344,7 +1344,7 @@ class ThemeEncoder {
   ///  * [encodeColor]
   ///  * [encodeEdgeInsetsGeometry]
   ///  * [encodeShapeBorder]
-  static Map<String, dynamic>? encodeCardTheme(CardTheme? value) {
+  static Map<String, dynamic>? encodeCardTheme(CardThemeData? value) {
     Map<String, dynamic>? result;
 
     if (value != null) {
@@ -1526,6 +1526,7 @@ class ThemeEncoder {
     String? result;
 
     if (value != null) {
+      // ignore: deprecated_member_use
       final hex = value.value.toRadixString(16).padLeft(8, '0');
       result = '#$hex';
     }
@@ -2050,7 +2051,7 @@ class ThemeEncoder {
   ///  * [encodeColor]
   ///  * [encodeShapeBorder]
   ///  * [encodeTextStyle]
-  static Map<String, dynamic>? encodeDialogTheme(DialogTheme? value) {
+  static Map<String, dynamic>? encodeDialogTheme(DialogThemeData? value) {
     Map<String, dynamic>? result;
 
     if (value != null) {
@@ -3629,6 +3630,7 @@ class ThemeEncoder {
 
     if (value != null) {
       result = <String, dynamic>{
+        // ignore: deprecated_member_use
         'primary': encodeColor(Color(value.value)),
         'swatches': {
           '50': encodeColor(value.shade50),
@@ -6110,7 +6112,7 @@ class ThemeEncoder {
   ///  * [encodeTabAlignment]
   ///  * [encodeTabBarIndicatorSize]
   ///  * [encodeTextStyle]
-  static Map<String, dynamic>? encodeTabBarTheme(TabBarTheme? value) {
+  static Map<String, dynamic>? encodeTabBarTheme(TabBarThemeData? value) {
     Map<String, dynamic>? result;
 
     if (value != null) {

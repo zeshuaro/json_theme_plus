@@ -2517,13 +2517,13 @@ class ThemeDecoder {
   ///  * [decodeColor]
   ///  * [decodeEdgeInsetsGeometry]
   ///  * [decodeShapeBorder]
-  static CardTheme? decodeCardTheme(
+  static CardThemeData? decodeCardTheme(
     dynamic value, {
     bool validate = true,
   }) {
-    CardTheme? result;
+    CardThemeData? result;
 
-    if (value is CardTheme) {
+    if (value is CardThemeData) {
       result = value;
     } else if (value != null) {
       assert(
@@ -2533,7 +2533,7 @@ class ThemeDecoder {
           validate: validate,
         ),
       );
-      result = CardTheme(
+      result = CardThemeData(
         clipBehavior: decodeClip(
           value['clipBehavior'],
           validate: false,
@@ -3838,7 +3838,7 @@ class ThemeDecoder {
     return result;
   }
 
-  /// Decodes the given [value] to an [DialogTheme].  This expects the given
+  /// Decodes the given [value] to an [DialogThemeData].  This expects the given
   /// [value] to follow the structure below:
   ///
   /// ```json
@@ -3863,13 +3863,13 @@ class ThemeDecoder {
   ///  * [decodeEdgeInsetsGeometry]
   ///  * [decodeShapeBorder]
   ///  * [decodeTextStyle]
-  static DialogTheme? decodeDialogTheme(
+  static DialogThemeData? decodeDialogTheme(
     dynamic value, {
     bool validate = true,
   }) {
-    DialogTheme? result;
+    DialogThemeData? result;
 
-    if (value is DialogTheme) {
+    if (value is DialogThemeData) {
       result = value;
     } else if (value != null) {
       assert(
@@ -3879,7 +3879,7 @@ class ThemeDecoder {
           validate: validate,
         ),
       );
-      result = DialogTheme(
+      result = DialogThemeData(
         actionsPadding: decodeEdgeInsetsGeometry(
           value['actionsPadding'],
           validate: false,
@@ -6626,11 +6626,11 @@ class ThemeDecoder {
           value['primary'],
           validate: false,
         )!
+            // ignore: deprecated_member_use
             .value,
         swatches,
       );
     }
-
     return result;
   }
 
@@ -10810,7 +10810,7 @@ class ThemeDecoder {
     return result;
   }
 
-  /// Decodes the given [value] to a [TabBarTheme].  This expects the
+  /// Decodes the given [value] to a [TabBarThemeData].  This expects the
   /// [value] to have the following structure:
   ///
   /// ```json
@@ -10840,13 +10840,13 @@ class ThemeDecoder {
   ///  * [decodeTabBarAlignment]
   ///  * [decodeTabBarIndicatorSize]
   ///  * [decodeTextStyle]
-  static TabBarTheme? decodeTabBarTheme(
+  static TabBarThemeData? decodeTabBarTheme(
     dynamic value, {
     bool validate = true,
   }) {
-    TabBarTheme? result;
+    TabBarThemeData? result;
 
-    if (value is TabBarTheme) {
+    if (value is TabBarThemeData) {
       result = value;
     } else if (value != null) {
       assert(
@@ -10860,7 +10860,7 @@ class ThemeDecoder {
         value['indicator'] == null,
         'TabBarTheme.indicator is not supported',
       );
-      result = TabBarTheme(
+      result = TabBarThemeData(
         dividerColor: decodeColor(
           value['dividerColor'],
           validate: false,

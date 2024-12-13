@@ -1945,7 +1945,7 @@ void main() {
     expect(ThemeDecoder.decodeCardTheme(null), null);
     expect(ThemeEncoder.encodeCardTheme(null), null);
 
-    final entry = CardTheme(
+    final entry = CardThemeData(
       clipBehavior: Clip.hardEdge,
       color: const Color(0xff111111),
       elevation: 3.0,
@@ -2825,11 +2825,11 @@ void main() {
     );
   });
 
-  test('DialogTheme', () {
+  test('dialogTheme', () {
     expect(ThemeDecoder.decodeDialogTheme(null), null);
     expect(ThemeEncoder.encodeDialogTheme(null), null);
 
-    const entry = DialogTheme(
+    const entry = DialogThemeData(
       actionsPadding: EdgeInsets.all(8.0),
       alignment: Alignment.bottomLeft,
       backgroundColor: _kColor,
@@ -5084,6 +5084,7 @@ void main() {
     expect(ThemeDecoder.decodeMaterialColor(null), null);
     expect(ThemeEncoder.encodeMaterialColor(null), null);
 
+    // ignore: deprecated_member_use
     final entry = MaterialColor(_kColor.value, const {
       50: _kColor,
       100: _kColor,
@@ -8899,7 +8900,7 @@ void main() {
       // pass
     }
 
-    const entry = TabBarTheme(
+    const entry = TabBarThemeData(
       indicatorSize: TabBarIndicatorSize.label,
       labelColor: Color(0xff111111),
       labelPadding: EdgeInsets.all(1.0),
@@ -10232,7 +10233,7 @@ void main() {
       buttonBarTheme: const ButtonBarThemeData(buttonHeight: 3.0),
       canvasColor: const Color(0xffcccccc),
       cardColor: const Color(0xffdddddd),
-      cardTheme: const CardTheme(color: Color(0xffeeeeee)),
+      cardTheme: const CardThemeData(color: Color(0xffeeeeee)),
       checkboxTheme: CheckboxThemeData(
         fillColor: WidgetStateProperty.all(const Color(0xff123456)),
       ),
@@ -10280,7 +10281,7 @@ void main() {
         horizontalMargin: 1.0,
       ),
       dialogBackgroundColor: const Color(0xee888888),
-      dialogTheme: const DialogTheme(backgroundColor: Color(0xee999999)),
+      dialogTheme: const DialogThemeData(backgroundColor: Color(0xee999999)),
       disabledColor: const Color(0xee000000),
       dividerColor: const Color(0xeeaaaaaa),
       dividerTheme: const DividerThemeData(color: Color(0xeebbbbbb)),
@@ -10395,7 +10396,7 @@ void main() {
       switchTheme: SwitchThemeData(
         thumbColor: WidgetStateProperty.all(const Color(0xff123456)),
       ),
-      tabBarTheme: const TabBarTheme(labelColor: Color(0xccffffff)),
+      tabBarTheme: const TabBarThemeData(labelColor: Color(0xccffffff)),
       textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
           backgroundColor: WidgetStateProperty.all(
