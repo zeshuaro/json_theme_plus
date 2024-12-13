@@ -10386,8 +10386,10 @@ void main() {
       scaffoldBackgroundColor: const Color(0xee666666),
       secondaryHeaderColor: const Color(0xccbbbbbb),
       shadowColor: const Color(0xcccccccc),
-      sliderTheme: const SliderThemeData(activeTickMarkColor: Color(0xccdddddd)),
-      snackBarTheme: const SnackBarThemeData(actionTextColor: Color(0xcceeeeee)),
+      sliderTheme:
+          const SliderThemeData(activeTickMarkColor: Color(0xccdddddd)),
+      snackBarTheme:
+          const SnackBarThemeData(actionTextColor: Color(0xcceeeeee)),
       splashColor: const Color(0xee444444),
       splashFactory: InkSplash.splashFactory,
       switchTheme: SwitchThemeData(

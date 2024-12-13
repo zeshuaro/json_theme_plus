@@ -7201,7 +7201,8 @@ class ThemeEncoder {
         'sliderTheme': encodeSliderThemeData(value.sliderTheme),
         'snackBarTheme': encodeSnackBarThemeData(value.snackBarTheme),
         'splashColor': encodeColor(value.splashColor),
-        'splashFactory': encodeInteractiveInkFeatureFactory(value.splashFactory),
+        'splashFactory':
+            encodeInteractiveInkFeatureFactory(value.splashFactory),
         'switchTheme': encodeSwitchThemeData(value.switchTheme),
         'tabBarTheme': encodeTabBarTheme(value.tabBarTheme),
         'textButtonTheme': encodeTextButtonThemeData(value.textButtonTheme),
