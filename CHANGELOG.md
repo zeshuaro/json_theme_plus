@@ -1,3 +1,34 @@
+## [6.7.2](https://github.com/zeshuaro/json_theme_plus/compare/v6.7.1...v6.7.2) (2025-01-19)
+
+### Bug Fixes
+
+* **sdk:** update dependency dart to >=3.6.1 <4.0.0 ([#127](https://github.com/zeshuaro/json_theme_plus/issues/127)) ([f712d63](https://github.com/zeshuaro/json_theme_plus/commit/f712d6337823dfef68ac0bd30fa35c93b6153260))
+* **sdk:** update dependency flutter to v3.27.2 ([#131](https://github.com/zeshuaro/json_theme_plus/issues/131)) ([f4a829d](https://github.com/zeshuaro/json_theme_plus/commit/f4a829d59326e133472dc1d98d9287178753fbc0))
+
+### Documentation
+
+* **license:** update copyright year to 2025 ([#124](https://github.com/zeshuaro/json_theme_plus/issues/124)) ([ca902c2](https://github.com/zeshuaro/json_theme_plus/commit/ca902c2a129035de602de44f398004a97988fac1))
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#114](https://github.com/zeshuaro/json_theme_plus/issues/114)) ([ae4708b](https://github.com/zeshuaro/json_theme_plus/commit/ae4708be7d42da752f33bd7eb0c8ea88a9c740f2))
+* **deps:** lock file maintenance ([#118](https://github.com/zeshuaro/json_theme_plus/issues/118)) ([b1e01c6](https://github.com/zeshuaro/json_theme_plus/commit/b1e01c6cd1097b71d1dac4910fc12723fcbe0255))
+* **deps:** lock file maintenance ([#122](https://github.com/zeshuaro/json_theme_plus/issues/122)) ([35d948f](https://github.com/zeshuaro/json_theme_plus/commit/35d948f7737b2741a6cfdf36b999747cdbd862d5))
+* **deps:** lock file maintenance ([#129](https://github.com/zeshuaro/json_theme_plus/issues/129)) ([7509fac](https://github.com/zeshuaro/json_theme_plus/commit/7509facbca7b050188b99378577af3ff41b047fc))
+* **deps:** update dependency build to v2.4.2 ([#115](https://github.com/zeshuaro/json_theme_plus/issues/115)) ([82ab53f](https://github.com/zeshuaro/json_theme_plus/commit/82ab53f8ee834df911981db3f1df8c8767ef1a96))
+* **deps:** update dependency build_runner to v2.4.14 ([#116](https://github.com/zeshuaro/json_theme_plus/issues/116)) ([e335700](https://github.com/zeshuaro/json_theme_plus/commit/e33570081ee59b8fe4d7cb5a790be990f271545a))
+* **deps:** update dependency semantic-release to v24.2.1 ([#123](https://github.com/zeshuaro/json_theme_plus/issues/123)) ([39a0434](https://github.com/zeshuaro/json_theme_plus/commit/39a0434eedaddd9bbf4ccfd390461bedff73d2a2))
+* **deps:** update dependency semantic-release-pub to v0.9.4 ([#125](https://github.com/zeshuaro/json_theme_plus/issues/125)) ([e050506](https://github.com/zeshuaro/json_theme_plus/commit/e050506a645bb83867ed7dfa4f8936380012ae23))
+* **deps:** update dependency semantic-release-pub to v0.9.5 ([#130](https://github.com/zeshuaro/json_theme_plus/issues/130)) ([12b96fb](https://github.com/zeshuaro/json_theme_plus/commit/12b96fb5a3385f0d7f1a7b8d2febebfdfa5ecea7))
+* **example/deps:** update dependency dart to >=3.6.1 <4.0.0 ([#126](https://github.com/zeshuaro/json_theme_plus/issues/126)) ([408c6e9](https://github.com/zeshuaro/json_theme_plus/commit/408c6e97c36e443724286ade29d6d154c69a82c3))
+* **node:** update node.js to v22.13.0 ([#128](https://github.com/zeshuaro/json_theme_plus/issues/128)) ([865f4b0](https://github.com/zeshuaro/json_theme_plus/commit/865f4b0b6c4bc7c0b444b2f006eee7819a8dc38c))
+
+### Continuous Integration
+
+* **deps:** update zeshuaro/github-actions-workflows digest to 0e99264 ([#121](https://github.com/zeshuaro/json_theme_plus/issues/121)) ([d41a664](https://github.com/zeshuaro/json_theme_plus/commit/d41a664c5b09d84e3b11b6ca149ce4dc8bd4c830))
+* **deps:** update zeshuaro/github-actions-workflows digest to 10d4949 ([#119](https://github.com/zeshuaro/json_theme_plus/issues/119)) ([58c7a84](https://github.com/zeshuaro/json_theme_plus/commit/58c7a848e37239d5ea9b822917d5b565f370ed3a))
+* **deps:** update zeshuaro/github-actions-workflows digest to cf38a07 ([#120](https://github.com/zeshuaro/json_theme_plus/issues/120)) ([6f8ff0a](https://github.com/zeshuaro/json_theme_plus/commit/6f8ff0abdeed6bc048afca4dbd09fb0a383de1ff))
+
 ## [6.7.1](https://github.com/zeshuaro/json_theme_plus/compare/v6.7.0...v6.7.1) (2024-12-22)
 
 ### Bug Fixes
