@@ -1,3 +1,18 @@
+## [6.7.3](https://github.com/zeshuaro/json_theme_plus/compare/v6.7.2...v6.7.3) (2025-01-26)
+
+### Bug Fixes
+
+* **sdk:** update dependency flutter to v3.27.3 ([#134](https://github.com/zeshuaro/json_theme_plus/issues/134)) ([12f8a89](https://github.com/zeshuaro/json_theme_plus/commit/12f8a89bfecfd81ae3c7b4092e986f44a6e9119e))
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#132](https://github.com/zeshuaro/json_theme_plus/issues/132)) ([0710f5f](https://github.com/zeshuaro/json_theme_plus/commit/0710f5f29d77ec662db153f71e2db64ce19ed0be))
+* **node:** update node.js to v22.13.1 ([#133](https://github.com/zeshuaro/json_theme_plus/issues/133)) ([4d0d7ff](https://github.com/zeshuaro/json_theme_plus/commit/4d0d7fff12b9e7e65cae75f0aa95752464490c27))
+
+### Continuous Integration
+
+* **deps:** update zeshuaro/github-actions-workflows digest to e40c850 ([#135](https://github.com/zeshuaro/json_theme_plus/issues/135)) ([d9b6736](https://github.com/zeshuaro/json_theme_plus/commit/d9b6736474a0727d5fa929000311c55f2c44017c))
+
 ## [6.7.2](https://github.com/zeshuaro/json_theme_plus/compare/v6.7.1...v6.7.2) (2025-01-19)
 
 ### Bug Fixes
