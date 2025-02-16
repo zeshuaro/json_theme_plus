@@ -447,6 +447,28 @@ void main() {
     );
   });
 
+  test('AnimationStyle', () {
+    expect(ThemeDecoder.decodeAnimationStyle(null), null);
+    expect(ThemeEncoder.encodeAnimationStyle(null), null);
+
+    expect(
+      ThemeDecoder.decodeAnimationStyle(
+        AnimationStyle.noAnimation,
+      ),
+      AnimationStyle.noAnimation,
+    );
+
+    expect(
+      ThemeDecoder.decodeAnimationStyle('noAnimation'),
+      AnimationStyle.noAnimation,
+    );
+
+    expect(
+      ThemeEncoder.encodeAnimationStyle(AnimationStyle.noAnimation),
+      'noAnimation',
+    );
+  });
+
   test('AppBarTheme', () {
     expect(ThemeDecoder.decodeAppBarTheme(null), null);
     expect(ThemeEncoder.encodeAppBarTheme(null), null);
@@ -498,31 +520,11 @@ void main() {
       AutovalidateMode.always,
     );
 
-    expect(
-      ThemeDecoder.decodeAutovalidateMode('always'),
-      AutovalidateMode.always,
-    );
-    expect(
-      ThemeDecoder.decodeAutovalidateMode('disabled'),
-      AutovalidateMode.disabled,
-    );
-    expect(
-      ThemeDecoder.decodeAutovalidateMode('onUserInteraction'),
-      AutovalidateMode.onUserInteraction,
-    );
-
-    expect(
-      ThemeEncoder.encodeAutovalidateMode(AutovalidateMode.always),
-      'always',
-    );
-    expect(
-      ThemeEncoder.encodeAutovalidateMode(AutovalidateMode.disabled),
-      'disabled',
-    );
-    expect(
-      ThemeEncoder.encodeAutovalidateMode(AutovalidateMode.onUserInteraction),
-      'onUserInteraction',
-    );
+    // Test each values from AutovalidateMode enum
+    for (var value in AutovalidateMode.values) {
+      expect(ThemeDecoder.decodeAutovalidateMode(value.name), value);
+      expect(ThemeEncoder.encodeAutovalidateMode(value), value.name);
+    }
   });
 
   test('Axis', () {
@@ -1790,37 +1792,52 @@ void main() {
       'alignedDropdown': true,
       'buttonColor': '#ff111111',
       'colorScheme': {
-        'background': '#ff121212',
         'brightness': 'dark',
         'error': '#ffcf6679',
         'errorContainer': '#ffcf6679',
         'inversePrimary': '#ff000000',
         'inverseSurface': '#ffffffff',
-        'onBackground': '#ffffffff',
         'onError': '#ff000000',
         'onErrorContainer': '#ff000000',
         'onInverseSurface': '#ff121212',
+        'onPrimaryFixed': '#ff000000',
         'onPrimary': '#ff000000',
         'onPrimaryContainer': '#ff000000',
+        'onPrimaryFixedVariant': '#ff000000',
         'onSecondary': '#ff000000',
         'onSecondaryContainer': '#ff000000',
+        'onSecondaryFixed': '#ff000000',
+        'onSecondaryFixedVariant': '#ff000000',
         'onSurface': '#ffffffff',
         'onSurfaceVariant': '#ffffffff',
         'onTertiary': '#ff000000',
         'onTertiaryContainer': '#ff000000',
+        'onTertiaryFixed': '#ff000000',
+        'onTertiaryFixedVariant': '#ff000000',
         'outline': '#ffffffff',
         'outlineVariant': '#ffffffff',
         'primary': '#ffbb86fc',
         'primaryContainer': '#ffbb86fc',
+        'primaryFixed': '#ffbb86fc',
+        'primaryFixedDim': '#ffbb86fc',
         'scrim': '#ff000000',
         'secondary': '#ff03dac6',
         'secondaryContainer': '#ff03dac6',
-        'shadow': '#ffffffff',
-        'surface': '#ff121212',
-        'surfaceTint': '#ffbb86fc',
+        'surfaceBright': '#ff121212',
+        'surfaceContainer': '#ff121212',
+        'surfaceContainerHigh': '#ff121212',
         'surfaceContainerHighest': '#ff121212',
+        'secondaryFixed': '#ff03dac6',
+        'secondaryFixedDim': '#ff03dac6',
+        'shadow': '#ff000000',
+        'surface': '#ff121212',
+        'surfaceContainerLow': '#ff121212',
+        'surfaceContainerLowest': '#ff121212',
+        'surfaceDim': '#ff121212',
         'tertiary': '#ff03dac6',
         'tertiaryContainer': '#ff03dac6',
+        'tertiaryFixed': '#ff03dac6',
+        'tertiaryFixedDim': '#ff03dac6',
       },
       'disabledColor': '#ff222222',
       'focusColor': '#ff333333',
@@ -1858,37 +1875,52 @@ void main() {
       {
         'alignedDropdown': true,
         'colorScheme': {
-          'background': '#ff121212',
           'brightness': 'dark',
           'error': '#ffcf6679',
           'errorContainer': '#ffcf6679',
           'inversePrimary': '#ff000000',
           'inverseSurface': '#ffffffff',
-          'onBackground': '#ffffffff',
           'onError': '#ff000000',
           'onErrorContainer': '#ff000000',
           'onInverseSurface': '#ff121212',
+          'onPrimaryFixed': '#ff000000',
           'onPrimary': '#ff000000',
           'onPrimaryContainer': '#ff000000',
+          'onPrimaryFixedVariant': '#ff000000',
           'onSecondary': '#ff000000',
           'onSecondaryContainer': '#ff000000',
+          'onSecondaryFixed': '#ff000000',
+          'onSecondaryFixedVariant': '#ff000000',
           'onSurface': '#ffffffff',
           'onSurfaceVariant': '#ffffffff',
           'onTertiary': '#ff000000',
           'onTertiaryContainer': '#ff000000',
+          'onTertiaryFixed': '#ff000000',
+          'onTertiaryFixedVariant': '#ff000000',
           'outline': '#ffffffff',
           'outlineVariant': '#ffffffff',
           'primary': '#ffbb86fc',
           'primaryContainer': '#ffbb86fc',
+          'primaryFixed': '#ffbb86fc',
+          'primaryFixedDim': '#ffbb86fc',
           'scrim': '#ff000000',
           'secondary': '#ff03dac6',
           'secondaryContainer': '#ff03dac6',
+          'surfaceBright': '#ff121212',
+          'surfaceContainer': '#ff121212',
+          'surfaceContainerHigh': '#ff121212',
+          'surfaceContainerHighest': '#ff121212',
+          'secondaryFixed': '#ff03dac6',
+          'secondaryFixedDim': '#ff03dac6',
           'shadow': '#ff000000',
           'surface': '#ff121212',
-          'surfaceTint': '#ffbb86fc',
-          'surfaceContainerHighest': '#ff121212',
+          'surfaceContainerLow': '#ff121212',
+          'surfaceContainerLowest': '#ff121212',
+          'surfaceDim': '#ff121212',
           'tertiary': '#ff03dac6',
           'tertiaryContainer': '#ff03dac6',
+          'tertiaryFixed': '#ff03dac6',
+          'tertiaryFixedDim': '#ff03dac6',
         },
         'height': 16.0,
         'layoutBehavior': 'padded',
@@ -1945,6 +1977,130 @@ void main() {
     expect(ThemeDecoder.decodeCardTheme(null), null);
     expect(ThemeEncoder.encodeCardTheme(null), null);
 
+    const corner = {
+      'type': 'elliptical',
+      'x': 12.0,
+      'y': 12.0,
+    };
+
+    var entry = ThemeDecoder.decodeCardTheme({
+      'clipBehavior': 'hardEdge',
+      'color': '#ff111111',
+      'elevation': 3.0,
+      'margin': {
+        'bottom': 10.0,
+        'left': 10.0,
+        'right': 10.0,
+        'top': 10.0,
+      },
+      'shadowColor': '#ff222222',
+      'shape': {
+        'borderRadius': {
+          'bottomLeft': corner,
+          'bottomRight': corner,
+          'topLeft': corner,
+          'topRight': corner,
+          'type': 'only',
+        },
+        'side': {
+          'color': '#ff000000',
+          'strokeAlign': -1.0,
+          'style': 'none',
+          'width': 0.0,
+        },
+        'type': 'rounded',
+      },
+    });
+
+    expect(ThemeDecoder.decodeCardTheme(entry), entry);
+
+    var encoded = ThemeEncoder.encodeCardTheme(entry);
+
+    expect(encoded, {
+      'data': {
+        'clipBehavior': 'hardEdge',
+        'color': '#ff111111',
+        'elevation': 3.0,
+        'margin': {
+          'bottom': 10.0,
+          'left': 10.0,
+          'right': 10.0,
+          'top': 10.0,
+        },
+        'shadowColor': '#ff222222',
+        'shape': {
+          'borderRadius': {
+            'bottomLeft': corner,
+            'bottomRight': corner,
+            'topLeft': corner,
+            'topRight': corner,
+            'type': 'only',
+          },
+          'side': {
+            'color': '#ff000000',
+            'strokeAlign': -1.0,
+            'style': 'none',
+            'width': 0.0,
+          },
+          'type': 'rounded',
+        },
+      },
+    });
+
+    entry = CardTheme(
+      data: CardThemeData(
+        clipBehavior: Clip.hardEdge,
+        color: const Color(0xff111111),
+        elevation: 3.0,
+        margin: const EdgeInsets.all(10.0),
+        shadowColor: const Color(0xff222222),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12.0),
+          side: BorderSide.none,
+        ),
+      ),
+    );
+
+    expect(ThemeDecoder.decodeCardTheme(entry), entry);
+
+    encoded = ThemeEncoder.encodeCardTheme(entry);
+
+    expect(encoded, {
+      'data': {
+        'clipBehavior': 'hardEdge',
+        'color': '#ff111111',
+        'elevation': 3.0,
+        'margin': {
+          'bottom': 10.0,
+          'left': 10.0,
+          'right': 10.0,
+          'top': 10.0,
+        },
+        'shadowColor': '#ff222222',
+        'shape': {
+          'borderRadius': {
+            'bottomLeft': corner,
+            'bottomRight': corner,
+            'topLeft': corner,
+            'topRight': corner,
+            'type': 'only',
+          },
+          'side': {
+            'color': '#ff000000',
+            'strokeAlign': -1.0,
+            'style': 'none',
+            'width': 0.0,
+          },
+          'type': 'rounded',
+        },
+      },
+    });
+  });
+
+  test('CardThemeData', () {
+    expect(ThemeDecoder.decodeCardThemeData(null), null);
+    expect(ThemeEncoder.encodeCardThemeData(null), null);
+
     final entry = CardThemeData(
       clipBehavior: Clip.hardEdge,
       color: const Color(0xff111111),
@@ -1957,7 +2113,7 @@ void main() {
       ),
     );
 
-    expect(ThemeDecoder.decodeCardTheme(entry), entry);
+    expect(ThemeDecoder.decodeCardThemeData(entry), entry);
 
     const corner = {
       'type': 'elliptical',
@@ -1965,8 +2121,8 @@ void main() {
       'y': 12.0,
     };
 
-    final encoded = ThemeEncoder.encodeCardTheme(entry);
-    final decoded = ThemeDecoder.decodeCardTheme(encoded);
+    final encoded = ThemeEncoder.encodeCardThemeData(entry);
+    final decoded = ThemeDecoder.decodeCardThemeData(encoded);
 
     expect(encoded, {
       'clipBehavior': 'hardEdge',
@@ -2056,12 +2212,14 @@ void main() {
     expect(ThemeEncoder.encodeChipThemeData(null), null);
 
     final entry = ChipThemeData(
+      avatarBoxConstraints: BoxConstraints(minWidth: 10),
       backgroundColor: const Color(0xff111111),
       brightness: Brightness.light,
       checkmarkColor: const Color(0xff222222),
       color: WidgetStateProperty.all(
         const Color(0xff555555),
       ),
+      deleteIconBoxConstraints: BoxConstraints(minWidth: 20),
       deleteIconColor: const Color(0xff333333),
       disabledColor: const Color(0xff444444),
       elevation: 2.0,
@@ -2092,10 +2250,18 @@ void main() {
     expect(
       encoded,
       {
+        'avatarBoxConstraints': {
+          'minHeight': 0.0,
+          'minWidth': 10.0,
+        },
         'backgroundColor': '#ff111111',
         'brightness': 'light',
         'checkmarkColor': '#ff222222',
         'color': _materializeState('#ff555555'),
+        'deleteIconBoxConstraints': {
+          'minHeight': 0.0,
+          'minWidth': 20.0,
+        },
         'deleteIconColor': '#ff333333',
         'disabledColor': '#ff444444',
         'elevation': 2.0,
@@ -2252,37 +2418,52 @@ void main() {
     expect(
       encoded,
       {
-        'background': '#ff121212',
         'brightness': 'dark',
         'error': '#ffcf6679',
         'errorContainer': '#ffcf6679',
         'inversePrimary': '#ff000000',
         'inverseSurface': '#ffffffff',
-        'onBackground': '#ffffffff',
         'onError': '#ff000000',
         'onErrorContainer': '#ff000000',
         'onInverseSurface': '#ff121212',
+        'onPrimaryFixed': '#ff000000',
         'onPrimary': '#ff000000',
         'onPrimaryContainer': '#ff000000',
+        'onPrimaryFixedVariant': '#ff000000',
         'onSecondary': '#ff000000',
         'onSecondaryContainer': '#ff000000',
+        'onSecondaryFixed': '#ff000000',
+        'onSecondaryFixedVariant': '#ff000000',
         'onSurface': '#ffffffff',
         'onSurfaceVariant': '#ffffffff',
         'onTertiary': '#ff000000',
         'onTertiaryContainer': '#ff000000',
+        'onTertiaryFixed': '#ff000000',
+        'onTertiaryFixedVariant': '#ff000000',
         'outline': '#ffffffff',
         'outlineVariant': '#ffffffff',
         'primary': '#ffbb86fc',
         'primaryContainer': '#ffbb86fc',
+        'primaryFixed': '#ffbb86fc',
+        'primaryFixedDim': '#ffbb86fc',
         'scrim': '#ff000000',
         'secondary': '#ff03dac6',
         'secondaryContainer': '#ff03dac6',
+        'surfaceBright': '#ff121212',
+        'surfaceContainer': '#ff121212',
+        'surfaceContainerHigh': '#ff121212',
+        'surfaceContainerHighest': '#ff121212',
+        'secondaryFixed': '#ff03dac6',
+        'secondaryFixedDim': '#ff03dac6',
         'shadow': '#ff000000',
         'surface': '#ff121212',
-        'surfaceTint': '#ffbb86fc',
-        'surfaceContainerHighest': '#ff121212',
+        'surfaceContainerLow': '#ff121212',
+        'surfaceContainerLowest': '#ff121212',
+        'surfaceDim': '#ff121212',
         'tertiary': '#ff03dac6',
         'tertiaryContainer': '#ff03dac6',
+        'tertiaryFixed': '#ff03dac6',
+        'tertiaryFixedDim': '#ff03dac6',
       },
     );
     expect(
@@ -2380,6 +2561,7 @@ void main() {
     expect(ThemeEncoder.encodeCupertinoTextThemeData(null), null);
 
     const entry = CupertinoTextThemeData(
+      actionSmallTextStyle: _kTextStyle,
       actionTextStyle: _kTextStyle,
       dateTimePickerTextStyle: _kTextStyle,
       navActionTextStyle: _kTextStyle,
@@ -2396,6 +2578,7 @@ void main() {
     final encoded = ThemeEncoder.encodeCupertinoTextThemeData(entry);
     final decoded = ThemeDecoder.decodeCupertinoTextThemeData(
       {
+        'actionSmallTextStyle': _kTextStyleJson,
         'actionTextStyle': _kTextStyleJson,
         'dateTimePickerTextStyle': _kTextStyleJson,
         'navActionTextStyle': _kTextStyleJson,
@@ -2411,6 +2594,7 @@ void main() {
     expect(
       encoded,
       {
+        'actionSmallTextStyle': _kTextStyleJson,
         'actionTextStyle': _kTextStyleJson,
         'dateTimePickerTextStyle': _kTextStyleJson,
         'navActionTextStyle': _kTextStyleJson,
@@ -2423,10 +2607,13 @@ void main() {
     );
 
     expect(
+      decoded.actionSmallTextStyle,
+      entry.actionSmallTextStyle,
+    );
+    expect(
       decoded.actionTextStyle,
       entry.actionTextStyle,
     );
-
     expect(
       decoded.dateTimePickerTextStyle,
       entry.dateTimePickerTextStyle,
@@ -2494,6 +2681,14 @@ void main() {
       'primaryContrastingColor': '#ff333333',
       'scaffoldBackgroundColor': '#ff444444',
       'textTheme': {
+        'actionSmallTextStyle': {
+          'color': '#ff555555',
+          'decoration': 'none',
+          'fontFamily': 'CupertinoSystemText',
+          'fontSize': 15.0,
+          'inherit': false,
+          'letterSpacing': -0.23,
+        },
         'actionTextStyle': {
           'color': '#11111111',
           'inherit': true,
@@ -2623,6 +2818,7 @@ void main() {
       decoration: const BoxDecoration(color: _kColor),
       dividerThickness: 1.0,
       headingCellCursor: const WidgetStatePropertyAll(SystemMouseCursors.click),
+      headingRowAlignment: MainAxisAlignment.center,
       headingRowColor: WidgetStateProperty.all(
         const Color(0xff555555),
       ),
@@ -2674,6 +2870,7 @@ void main() {
           'scrolledUnder': {'cursor': 'click', 'type': 'system'},
           'selected': {'cursor': 'click', 'type': 'system'},
         },
+        'headingRowAlignment': 'center',
         'headingRowColor': _materializeState('#ff555555'),
         'headingRowHeight': 1.0,
         'headingTextStyle': {
@@ -2825,14 +3022,15 @@ void main() {
     );
   });
 
-  test('dialogTheme', () {
+  test('DialogTheme', () {
     expect(ThemeDecoder.decodeDialogTheme(null), null);
     expect(ThemeEncoder.encodeDialogTheme(null), null);
 
-    const entry = DialogThemeData(
+    const entry = DialogTheme(
       actionsPadding: EdgeInsets.all(8.0),
       alignment: Alignment.bottomLeft,
       backgroundColor: _kColor,
+      clipBehavior: Clip.hardEdge,
       contentTextStyle: _kTextStyle,
       elevation: 1.0,
       shadowColor: _kColor,
@@ -2843,7 +3041,81 @@ void main() {
     expect(ThemeDecoder.decodeDialogTheme(entry), entry);
 
     final encoded = ThemeEncoder.encodeDialogTheme(entry);
-    final decoded = ThemeDecoder.decodeDialogTheme(encoded);
+
+    expect(
+      encoded,
+      {
+        'data': {
+          'actionsPadding': {
+            'bottom': 8.0,
+            'left': 8.0,
+            'right': 8.0,
+            'top': 8.0,
+          },
+          'alignment': 'bottomLeft',
+          'backgroundColor': _kColorStr,
+          'clipBehavior': 'hardEdge',
+          'contentTextStyle': _kTextStyleJson,
+          'elevation': 1.0,
+          'shadowColor': _kColorStr,
+          'shape': {
+            'borderRadius': {
+              'bottomLeft': {
+                'type': 'elliptical',
+                'x': 0.0,
+                'y': 0.0,
+              },
+              'bottomRight': {
+                'type': 'elliptical',
+                'x': 0.0,
+                'y': 0.0,
+              },
+              'topLeft': {
+                'type': 'elliptical',
+                'x': 0.0,
+                'y': 0.0,
+              },
+              'topRight': {
+                'type': 'elliptical',
+                'x': 0.0,
+                'y': 0.0,
+              },
+              'type': 'only',
+            },
+            'side': {
+              'color': '#ff000000',
+              'strokeAlign': -1,
+              'style': 'none',
+              'width': 0.0,
+            },
+            'type': 'rounded',
+          },
+          'surfaceTintColor': _kColorStr,
+        },
+      },
+    );
+  });
+
+  test('DialogThemeData', () {
+    expect(ThemeDecoder.decodeDialogThemeData(null), null);
+    expect(ThemeEncoder.encodeDialogThemeData(null), null);
+
+    const entry = DialogThemeData(
+      actionsPadding: EdgeInsets.all(8.0),
+      alignment: Alignment.bottomLeft,
+      backgroundColor: _kColor,
+      clipBehavior: Clip.hardEdge,
+      contentTextStyle: _kTextStyle,
+      elevation: 1.0,
+      shadowColor: _kColor,
+      shape: RoundedRectangleBorder(),
+      surfaceTintColor: _kColor,
+    );
+
+    expect(ThemeDecoder.decodeDialogThemeData(entry), entry);
+
+    final encoded = ThemeEncoder.encodeDialogThemeData(entry);
+    final decoded = ThemeDecoder.decodeDialogThemeData(encoded);
 
     expect(
       encoded,
@@ -2856,6 +3128,7 @@ void main() {
         },
         'alignment': 'bottomLeft',
         'backgroundColor': _kColorStr,
+        'clipBehavior': 'hardEdge',
         'contentTextStyle': _kTextStyleJson,
         'elevation': 1.0,
         'shadowColor': _kColorStr,
@@ -2898,6 +3171,76 @@ void main() {
     expect(
       decoded,
       entry,
+    );
+  });
+
+  test('DismissDirection', () {
+    expect(ThemeDecoder.decodeDismissDirection(null), null);
+    expect(ThemeEncoder.encodeDismissDirection(null), null);
+
+    expect(
+      ThemeDecoder.decodeDismissDirection(
+        DismissDirection.down,
+      ),
+      DismissDirection.down,
+    );
+
+    expect(
+      ThemeDecoder.decodeDismissDirection('down'),
+      DismissDirection.down,
+    );
+    expect(
+      ThemeDecoder.decodeDismissDirection('endToStart'),
+      DismissDirection.endToStart,
+    );
+    expect(
+      ThemeDecoder.decodeDismissDirection('horizontal'),
+      DismissDirection.horizontal,
+    );
+    expect(
+      ThemeDecoder.decodeDismissDirection('none'),
+      DismissDirection.none,
+    );
+    expect(
+      ThemeDecoder.decodeDismissDirection('startToEnd'),
+      DismissDirection.startToEnd,
+    );
+    expect(
+      ThemeDecoder.decodeDismissDirection('up'),
+      DismissDirection.up,
+    );
+    expect(
+      ThemeDecoder.decodeDismissDirection('vertical'),
+      DismissDirection.vertical,
+    );
+
+    expect(
+      ThemeEncoder.encodeDismissDirection(DismissDirection.down),
+      'down',
+    );
+    expect(
+      ThemeEncoder.encodeDismissDirection(DismissDirection.endToStart),
+      'endToStart',
+    );
+    expect(
+      ThemeEncoder.encodeDismissDirection(DismissDirection.horizontal),
+      'horizontal',
+    );
+    expect(
+      ThemeEncoder.encodeDismissDirection(DismissDirection.none),
+      'none',
+    );
+    expect(
+      ThemeEncoder.encodeDismissDirection(DismissDirection.startToEnd),
+      'startToEnd',
+    );
+    expect(
+      ThemeEncoder.encodeDismissDirection(DismissDirection.up),
+      'up',
+    );
+    expect(
+      ThemeEncoder.encodeDismissDirection(DismissDirection.vertical),
+      'vertical',
     );
   });
 
@@ -3223,12 +3566,13 @@ void main() {
     expect(ThemeDecoder.decodeExpansionTileThemeData(null), null);
     expect(ThemeEncoder.encodeExpansionTileThemeData(null), null);
 
-    const entry = ExpansionTileThemeData(
+    final entry = ExpansionTileThemeData(
       backgroundColor: Color(0xff111111),
       childrenPadding: EdgeInsets.all(8.0),
       collapsedBackgroundColor: Color(0xff222222),
       collapsedIconColor: Color(0xff333333),
       expandedAlignment: Alignment.bottomCenter,
+      expansionAnimationStyle: AnimationStyle.noAnimation,
       iconColor: Color(0xff444444),
       textColor: Color(0xff555555),
       tilePadding: EdgeInsets.all(8.0),
@@ -3254,6 +3598,7 @@ void main() {
         'collapsedBackgroundColor': '#ff222222',
         'collapsedIconColor': '#ff333333',
         'expandedAlignment': 'bottomCenter',
+        'expansionAnimationStyle': 'noAnimation',
         'iconColor': '#ff444444',
         'textColor': '#ff555555',
         'tilePadding': {
@@ -3993,6 +4338,8 @@ void main() {
     );
     const entry = Icon(
       data,
+      applyTextScaling: false,
+      blendMode: BlendMode.colorBurn,
       color: _kColor,
       fill: 0.1,
       grade: 0.2,
@@ -4010,6 +4357,8 @@ void main() {
     expect(
       encoded,
       {
+        'applyTextScaling': false,
+        'blendMode': 'colorBurn',
         'color': _kColorStr,
         'fill': 0.1,
         'grade': 0.2,
@@ -4166,6 +4515,7 @@ void main() {
     const entry = IconData(
       2,
       fontFamily: 'foo',
+      fontFamilyFallback: ['baz', 'baaaz'],
       fontPackage: 'bar',
       matchTextDirection: true,
     );
@@ -4180,6 +4530,7 @@ void main() {
       {
         'codePoint': 2,
         'fontFamily': 'foo',
+        'fontFamilyFallback': ['baz', 'baaaz'],
         'fontPackage': 'bar',
         'matchTextDirection': true,
       },
@@ -4196,6 +4547,7 @@ void main() {
     expect(ThemeEncoder.encodeIconThemeData(null), null);
 
     const entry = IconThemeData(
+      applyTextScaling: false,
       color: _kColor,
       fill: 0.5,
       grade: 3.0,
@@ -4213,6 +4565,7 @@ void main() {
     expect(
       encoded,
       {
+        'applyTextScaling': false,
         'color': _kColorStr,
         'fill': 0.5,
         'grade': 3.0,
@@ -4451,9 +4804,17 @@ void main() {
         style: BorderStyle.solid,
         width: 2.0,
       ),
+      prefixIconConstraints: BoxConstraints(
+        minHeight: 1.0,
+        minWidth: 2.0,
+      ),
       prefixIconColor: const Color(0xff334433),
       prefixStyle: const TextStyle(color: Color(0xff999999)),
       suffixIconColor: const Color(0xff445544),
+      suffixIconConstraints: BoxConstraints(
+        minHeight: 10.0,
+        minWidth: 20.0,
+      ),
       suffixStyle: const TextStyle(color: Color(0xff000000)),
     );
 
@@ -4723,11 +5084,19 @@ void main() {
           'width': 2.0,
         },
         'prefixIconColor': '#ff334433',
+        'prefixIconConstraints': {
+          'minHeight': 1.0,
+          'minWidth': 2.0,
+        },
         'prefixStyle': {
           'color': '#ff999999',
           'inherit': true,
         },
         'suffixIconColor': '#ff445544',
+        'suffixIconConstraints': {
+          'minHeight': 10.0,
+          'minWidth': 20.0,
+        },
         'suffixStyle': {
           'color': '#ff000000',
           'inherit': true,
@@ -4776,6 +5145,50 @@ void main() {
     expect(
       ThemeEncoder.encodeInteractiveInkFeatureFactory(InkSparkle.splashFactory),
       'sparkle',
+    );
+  });
+
+  test('ListTileControlAffinity', () {
+    expect(ThemeDecoder.decodeListTileControlAffinity(null), null);
+    expect(ThemeEncoder.encodeListTileControlAffinity(null), null);
+
+    expect(
+      ThemeDecoder.decodeListTileStyle(
+        ListTileStyle.drawer,
+      ),
+      ListTileStyle.drawer,
+    );
+
+    expect(
+      ThemeDecoder.decodeListTileControlAffinity('leading'),
+      ListTileControlAffinity.leading,
+    );
+    expect(
+      ThemeDecoder.decodeListTileControlAffinity('platform'),
+      ListTileControlAffinity.platform,
+    );
+    expect(
+      ThemeDecoder.decodeListTileControlAffinity('trailing'),
+      ListTileControlAffinity.trailing,
+    );
+
+    expect(
+      ThemeEncoder.encodeListTileControlAffinity(
+        ListTileControlAffinity.leading,
+      ),
+      'leading',
+    );
+    expect(
+      ThemeEncoder.encodeListTileControlAffinity(
+        ListTileControlAffinity.platform,
+      ),
+      'platform',
+    );
+    expect(
+      ThemeEncoder.encodeListTileControlAffinity(
+        ListTileControlAffinity.trailing,
+      ),
+      'trailing',
     );
   });
 
@@ -4866,11 +5279,13 @@ void main() {
         3,
         4,
       ),
+      controlAffinity: ListTileControlAffinity.trailing,
       dense: true,
       enableFeedback: false,
       horizontalTitleGap: 5,
       iconColor: Color(0xff111111),
       minLeadingWidth: 6,
+      minTileHeight: 10.0,
       minVerticalPadding: 7,
       selectedColor: Color(0xff222222),
       selectedTileColor: Color(0xff333333),
@@ -4892,11 +5307,13 @@ void main() {
           'right': 3,
           'bottom': 4,
         },
+        'controlAffinity': 'trailing',
         'dense': true,
         'enableFeedback': false,
         'horizontalTitleGap': 5,
         'iconColor': '#ff111111',
         'minLeadingWidth': 6,
+        'minTileHeight': 10.0,
         'minVerticalPadding': 7,
         'selectedColor': '#ff222222',
         'selectedTileColor': '#ff333333',
@@ -5084,8 +5501,7 @@ void main() {
     expect(ThemeDecoder.decodeMaterialColor(null), null);
     expect(ThemeEncoder.encodeMaterialColor(null), null);
 
-    // ignore: deprecated_member_use
-    final entry = MaterialColor(_kColor.value, const {
+    final entry = MaterialColor(colorToInt(_kColor)!, const {
       50: _kColor,
       100: _kColor,
       200: _kColor,
@@ -6153,12 +6569,15 @@ void main() {
     expect(ThemeDecoder.decodeNavigationBarThemeData(null), null);
     expect(ThemeEncoder.encodeNavigationBarThemeData(null), null);
 
-    const entry = NavigationBarThemeData(
+    final entry = NavigationBarThemeData(
       backgroundColor: Color(0xff111111),
       elevation: 4.0,
       height: 12.0,
       indicatorColor: Color(0xff222222),
       labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
+      overlayColor: WidgetStateProperty.all(
+        Color(0xff222222),
+      ),
       shadowColor: Color(0xff333333),
       surfaceTintColor: Color(0xff444444),
     );
@@ -6172,6 +6591,7 @@ void main() {
       'height': 12.0,
       'indicatorColor': '#ff222222',
       'labelBehavior': 'onlyShowSelected',
+      'overlayColor': _materializeState('#ff222222'),
       'shadowColor': '#ff333333',
       'surfaceTintColor': '#ff444444',
     });
@@ -6811,6 +7231,7 @@ void main() {
       enableFeedback: true,
       iconColor: _kColor,
       iconSize: 16.0,
+      menuPadding: EdgeInsets.only(top: 20.0),
       position: PopupMenuPosition.over,
       shadowColor: Color(0xff111111),
       shape: RoundedRectangleBorder(),
@@ -6831,6 +7252,12 @@ void main() {
         'enableFeedback': true,
         'iconColor': _kColorStr,
         'iconSize': 16.0,
+        'menuPadding': {
+          'bottom': 0.0,
+          'left': 0.0,
+          'right': 0.0,
+          'top': 20.0,
+        },
         'position': 'over',
         'shadowColor': '#ff111111',
         'shape': {
@@ -8301,6 +8728,7 @@ void main() {
       trackShape: const RectangularSliderTrackShape(),
       valueIndicatorColor: const Color(0xffcccccc),
       valueIndicatorShape: SliderComponentShape.noOverlay,
+      valueIndicatorStrokeColor: const Color(0xffcccccc),
       valueIndicatorTextStyle: _kTextStyle,
     );
 
@@ -8344,6 +8772,7 @@ void main() {
         },
         'valueIndicatorColor': '#ffcccccc',
         'valueIndicatorShape': 'noOverlay',
+        'valueIndicatorStrokeColor': '#ffcccccc',
         'valueIndicatorTextStyle': {
           'color': '#00123456',
           'inherit': true,
@@ -8460,6 +8889,7 @@ void main() {
       behavior: SnackBarBehavior.floating,
       contentTextStyle: TextStyle(color: Color(0xff333333)),
       disabledActionTextColor: Color(0xff444444),
+      dismissDirection: DismissDirection.endToStart,
       elevation: 1.0,
       shape: RoundedRectangleBorder(),
       width: 12.0,
@@ -8476,6 +8906,7 @@ void main() {
       'behavior': 'floating',
       'contentTextStyle': {'color': '#ff333333', 'inherit': true},
       'disabledActionTextColor': '#ff444444',
+      'dismissDirection': 'endToStart',
       'elevation': 1.0,
       'shape': {
         'borderRadius': {
@@ -8636,6 +9067,7 @@ void main() {
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
       mouseCursor: WidgetStateProperty.all(MouseCursor.defer),
       overlayColor: WidgetStateProperty.all(_kColor),
+      padding: EdgeInsets.all(8.0),
       splashRadius: 20.0,
       thumbColor: WidgetStateProperty.all(_kColor),
       trackColor: WidgetStateProperty.all(_kColor),
@@ -8665,6 +9097,12 @@ void main() {
         'pressed': '#00123456',
         'scrolledUnder': '#00123456',
         'selected': '#00123456',
+      },
+      'padding': {
+        'bottom': 8.0,
+        'left': 8.0,
+        'right': 8.0,
+        'top': 8.0,
       },
       'splashRadius': 20.0,
       'thumbColor': {
@@ -8900,11 +9338,12 @@ void main() {
       // pass
     }
 
-    const entry = TabBarThemeData(
+    const entry = TabBarTheme(
       indicatorSize: TabBarIndicatorSize.label,
       labelColor: Color(0xff111111),
       labelPadding: EdgeInsets.all(1.0),
       labelStyle: _kTextStyle,
+      textScaler: TextScaler.noScaling,
       unselectedLabelColor: Color(0xff222222),
       unselectedLabelStyle: TextStyle(color: Color(0xff333333)),
     );
@@ -8912,7 +9351,58 @@ void main() {
     expect(ThemeDecoder.decodeTabBarTheme(entry), entry);
 
     final encoded = ThemeEncoder.encodeTabBarTheme(entry);
-    final decoded = ThemeDecoder.decodeTabBarTheme(encoded);
+
+    expect(
+      encoded,
+      {
+        'data': {
+          'indicatorSize': 'label',
+          'labelColor': '#ff111111',
+          'labelPadding': {
+            'bottom': 1.0,
+            'left': 1.0,
+            'right': 1.0,
+            'top': 1.0,
+          },
+          'labelStyle': _kTextStyleJson,
+          'textScaler': 'noScaling',
+          'unselectedLabelColor': '#ff222222',
+          'unselectedLabelStyle': {
+            'color': '#ff333333',
+            'inherit': true,
+          },
+        },
+      },
+    );
+  });
+
+  test('TabBarThemeData', () {
+    expect(ThemeDecoder.decodeTabBarThemeData(null), null);
+    expect(ThemeEncoder.encodeTabBarThemeData(null), null);
+
+    try {
+      ThemeDecoder.decodeTabBarTheme({'indicator': 'foo'});
+      fail('exception expected');
+    } catch (e) {
+      // pass
+    }
+
+    const entry = TabBarThemeData(
+      indicatorSize: TabBarIndicatorSize.label,
+      labelColor: Color(0xff111111),
+      labelPadding: EdgeInsets.all(1.0),
+      labelStyle: _kTextStyle,
+      textScaler: TextScaler.noScaling,
+      unselectedLabelColor: Color(0xff222222),
+      unselectedLabelStyle: TextStyle(color: Color(0xff333333)),
+    );
+
+    expect(ThemeDecoder.decodeTabBarThemeData(entry), entry);
+
+    final encoded = ThemeEncoder.encodeTabBarThemeData(
+      entry,
+    );
+    final decoded = ThemeDecoder.decodeTabBarThemeData(encoded);
 
     expect(
       encoded,
@@ -8926,6 +9416,7 @@ void main() {
           'top': 1.0,
         },
         'labelStyle': _kTextStyleJson,
+        'textScaler': 'noScaling',
         'unselectedLabelColor': '#ff222222',
         'unselectedLabelStyle': {
           'color': '#ff333333',
@@ -8937,6 +9428,36 @@ void main() {
     expect(
       decoded,
       entry,
+    );
+  });
+
+  test('TabIndicatorAnimation', () {
+    expect(ThemeDecoder.decodeTabIndicatorAnimation(null), null);
+    expect(ThemeEncoder.encodeTabIndicatorAnimation(null), null);
+
+    expect(
+      ThemeDecoder.decodeTabIndicatorAnimation(
+        TabIndicatorAnimation.elastic,
+      ),
+      TabIndicatorAnimation.elastic,
+    );
+
+    expect(
+      ThemeDecoder.decodeTabIndicatorAnimation('elastic'),
+      TabIndicatorAnimation.elastic,
+    );
+    expect(
+      ThemeDecoder.decodeTabIndicatorAnimation('linear'),
+      TabIndicatorAnimation.linear,
+    );
+
+    expect(
+      ThemeEncoder.encodeTabIndicatorAnimation(TabIndicatorAnimation.elastic),
+      'elastic',
+    );
+    expect(
+      ThemeEncoder.encodeTabIndicatorAnimation(TabIndicatorAnimation.linear),
+      'linear',
     );
   });
 
@@ -9891,6 +10412,28 @@ void main() {
     expect(ThemeEncoder.encodeTextOverflow(TextOverflow.visible), 'visible');
   });
 
+  test('TextScaler', () {
+    expect(ThemeDecoder.decodeTextScaler(null), null);
+    expect(ThemeEncoder.encodeTextScaler(null), null);
+
+    expect(
+      ThemeDecoder.decodeTextScaler(
+        TextScaler.noScaling,
+      ),
+      TextScaler.noScaling,
+    );
+
+    expect(
+      ThemeDecoder.decodeTextScaler('noScaling'),
+      TextScaler.noScaling,
+    );
+
+    expect(
+      ThemeEncoder.encodeTextScaler(TextScaler.noScaling),
+      'noScaling',
+    );
+  });
+
   test('TextSelectionThemeData', () {
     expect(ThemeDecoder.decodeTextSelectionThemeData(null), null);
     expect(ThemeEncoder.encodeTextSelectionThemeData(null), null);
@@ -10228,12 +10771,12 @@ void main() {
       bottomSheetTheme: const BottomSheetThemeData(
         backgroundColor: Color(0xff000000),
       ),
-      buttonTheme: const ButtonThemeData(buttonColor: Color(0xffbbbbbb)),
       // ignore: deprecated_member_use
       buttonBarTheme: const ButtonBarThemeData(buttonHeight: 3.0),
+      buttonTheme: const ButtonThemeData(buttonColor: Color(0xffbbbbbb)),
       canvasColor: const Color(0xffcccccc),
       cardColor: const Color(0xffdddddd),
-      cardTheme: const CardThemeData(color: Color(0xffeeeeee)),
+      cardTheme: const CardTheme(color: Color(0xffeeeeee)),
       checkboxTheme: CheckboxThemeData(
         fillColor: WidgetStateProperty.all(const Color(0xff123456)),
       ),
@@ -10281,7 +10824,7 @@ void main() {
         horizontalMargin: 1.0,
       ),
       dialogBackgroundColor: const Color(0xee888888),
-      dialogTheme: const DialogThemeData(backgroundColor: Color(0xee999999)),
+      dialogTheme: const DialogTheme(backgroundColor: Color(0xee999999)),
       disabledColor: const Color(0xee000000),
       dividerColor: const Color(0xeeaaaaaa),
       dividerTheme: const DividerThemeData(color: Color(0xeebbbbbb)),
@@ -10396,7 +10939,7 @@ void main() {
       switchTheme: SwitchThemeData(
         thumbColor: WidgetStateProperty.all(const Color(0xff123456)),
       ),
-      tabBarTheme: const TabBarThemeData(labelColor: Color(0xccffffff)),
+      tabBarTheme: const TabBarTheme(labelColor: Color(0xccffffff)),
       textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
           backgroundColor: WidgetStateProperty.all(
@@ -10414,10 +10957,12 @@ void main() {
           color: Color(0xee555555),
         ),
       ),
-      timePickerTheme:
-          const TimePickerThemeData(backgroundColor: Color(0x11111111)),
-      toggleButtonsTheme:
-          const ToggleButtonsThemeData(color: Color(0xbb222222)),
+      timePickerTheme: const TimePickerThemeData(
+        backgroundColor: Color(0x11111111),
+      ),
+      toggleButtonsTheme: const ToggleButtonsThemeData(
+        color: Color(0xbb222222),
+      ),
       tooltipTheme: const TooltipThemeData(height: 19.0),
       typography: Typography.material2018(),
       unselectedWidgetColor: const Color(0xbb444444),
@@ -10518,37 +11063,52 @@ void main() {
         'showCheckmark': true,
       },
       'colorScheme': {
-        'background': '#ff121212',
         'brightness': 'dark',
         'error': '#ffcf6679',
         'errorContainer': '#ffcf6679',
         'inversePrimary': '#ff000000',
         'inverseSurface': '#ffffffff',
-        'onBackground': '#ffffffff',
         'onError': '#ff000000',
         'onErrorContainer': '#ff000000',
         'onInverseSurface': '#ff121212',
+        'onPrimaryFixed': '#ff000000',
         'onPrimary': '#ff000000',
         'onPrimaryContainer': '#ff000000',
+        'onPrimaryFixedVariant': '#ff000000',
         'onSecondary': '#ff000000',
         'onSecondaryContainer': '#ff000000',
+        'onSecondaryFixed': '#ff000000',
+        'onSecondaryFixedVariant': '#ff000000',
         'onSurface': '#ffffffff',
         'onSurfaceVariant': '#ffffffff',
         'onTertiary': '#ff000000',
         'onTertiaryContainer': '#ff000000',
+        'onTertiaryFixed': '#ff000000',
+        'onTertiaryFixedVariant': '#ff000000',
         'outline': '#ffffffff',
         'outlineVariant': '#ffffffff',
         'primary': '#ffbb86fc',
         'primaryContainer': '#ffbb86fc',
+        'primaryFixed': '#ffbb86fc',
+        'primaryFixedDim': '#ffbb86fc',
         'scrim': '#ff000000',
         'secondary': '#ff03dac6',
         'secondaryContainer': '#ff03dac6',
+        'surfaceBright': '#ff121212',
+        'surfaceContainer': '#ff121212',
+        'surfaceContainerHigh': '#ff121212',
+        'surfaceContainerHighest': '#ff121212',
+        'secondaryFixed': '#ff03dac6',
+        'secondaryFixedDim': '#ff03dac6',
         'shadow': '#ff000000',
         'surface': '#ff121212',
-        'surfaceTint': '#ffbb86fc',
-        'surfaceContainerHighest': '#ff121212',
+        'surfaceContainerLow': '#ff121212',
+        'surfaceContainerLowest': '#ff121212',
+        'surfaceDim': '#ff121212',
         'tertiary': '#ff03dac6',
         'tertiaryContainer': '#ff03dac6',
+        'tertiaryFixed': '#ff03dac6',
+        'tertiaryFixedDim': '#ff03dac6',
       },
       'cupertinoOverrideTheme': {'barBackgroundColor': '#ee111111'},
       'dataTableTheme': {
