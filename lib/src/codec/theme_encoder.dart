@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:json_theme_annotation/json_theme_annotation.dart';
+import 'package:json_theme_plus/json_theme_plus.dart';
 
 /// Encoder capable of converting Flutter Theme related classes and enums into
 /// JSON compatible values.
@@ -184,6 +185,22 @@ class ThemeEncoder {
     return _stripDynamicNull(result);
   }
 
+  /// Encodes the given [value] to a [String].  Supported values are:
+  /// * `noAnimation`
+  static String? encodeAnimationStyle(
+    AnimationStyle? value,
+  ) {
+    String? result;
+
+    if (value != null) {
+      if (value == AnimationStyle.noAnimation) {
+        result = 'noAnimation';
+      }
+    }
+
+    return _stripDynamicNull(result);
+  }
+
   /// Encodes the given [value] to a JSON representation.
   ///
   /// ```json
@@ -239,34 +256,11 @@ class ThemeEncoder {
   }
 
   /// Encodes the given [value] to a [String].  Supported values are:
-  /// * `always`
-  /// * `disabled`
-  /// * `onUserInteraction`
-  static String? encodeAutovalidateMode(AutovalidateMode? value) {
-    String? result;
-
-    if (value != null) {
-      switch (value) {
-        case AutovalidateMode.always:
-          result = 'always';
-          break;
-
-        case AutovalidateMode.disabled:
-          result = 'disabled';
-          break;
-
-        case AutovalidateMode.onUserInteraction:
-          result = 'onUserInteraction';
-          break;
-
-        case AutovalidateMode.onUnfocus:
-          result = 'onUnfocus';
-          break;
-      }
-    }
-
-    return _stripDynamicNull(result);
-  }
+  ///   * `always`
+  ///   * `disabled`
+  ///   * `onUnfocus`
+  ///   * `onUserInteraction`
+  static String? encodeAutovalidateMode(AutovalidateMode? value) => value?.name;
 
   /// Encodes the given [value] to the String representation.  Supported values
   /// are:
@@ -1153,26 +1147,26 @@ class ThemeEncoder {
   /// ```json
   /// {
   ///   "alignment": "<AlignmentGeometry>",
-  ///   "animationDuration": "<MaterialStateProperty<double>>",
-  ///   "backgroundColor": "<MaterialStateProperty<Color>>",
-  ///   "elevation": "<MaterialStateProperty<double>>",
+  ///   "animationDuration": "<WidgetStateProperty<double>>",
+  ///   "backgroundColor": "<WidgetStateProperty<Color>>",
+  ///   "elevation": "<WidgetStateProperty<double>>",
   ///   "enableFeedback": "<bool>",
-  ///   "fixedSize": "<MaterialStateProperty<double>>",
-  ///   "foregroundColor": "<MaterialStateProperty<Color>>",
-  ///   "iconColor": "<MaterialStateProperty<Color>>",
-  ///   "iconSize": "<MaterialStateProperty<double>>",
-  ///   "maximumSize": "<MaterialStateProperty<double>>",
-  ///   "minimumSize": "<MaterialStateProperty<Size>>",
-  ///   "mouseCursor": "<MaterialStateProperty<MouseCursor>>",
-  ///   "overlayColor": "<MaterialStateProperty<Color>>",
-  ///   "padding": "<MaterialStateProperty<EdgeInsetsGeometry>>",
-  ///   "shadowColor": "<MaterialStateProperty<Color>>",
-  ///   "shape": "<MaterialStateProperty<OutlinedBorder>>",
-  ///   "side": "<MaterialStateProperty<BorderSide>>",
+  ///   "fixedSize": "<WidgetStateProperty<double>>",
+  ///   "foregroundColor": "<WidgetStateProperty<Color>>",
+  ///   "iconColor": "<WidgetStateProperty<Color>>",
+  ///   "iconSize": "<WidgetStateProperty<double>>",
+  ///   "maximumSize": "<WidgetStateProperty<double>>",
+  ///   "minimumSize": "<WidgetStateProperty<Size>>",
+  ///   "mouseCursor": "<WidgetStateProperty<MouseCursor>>",
+  ///   "overlayColor": "<WidgetStateProperty<Color>>",
+  ///   "padding": "<WidgetStateProperty<EdgeInsetsGeometry>>",
+  ///   "shadowColor": "<WidgetStateProperty<Color>>",
+  ///   "shape": "<WidgetStateProperty<OutlinedBorder>>",
+  ///   "side": "<WidgetStateProperty<BorderSide>>",
   ///   "splashFactory": "<InteractiveInkSplashFactory>",
-  ///   "surfaceTintColor": "<MaterialStateProperty<Color>>",
+  ///   "surfaceTintColor": "<WidgetStateProperty<Color>>",
   ///   "tapTargetSize": "<MaterialTapTargetSize>",
-  ///   "textStyle": "<MaterialStateProperty<TextStyle>>",
+  ///   "textStyle": "<WidgetStateProperty<TextStyle>>",
   ///   "visualDensity": "<VisualDensity>"
   /// }
   /// ```
@@ -1344,7 +1338,38 @@ class ThemeEncoder {
   ///  * [encodeColor]
   ///  * [encodeEdgeInsetsGeometry]
   ///  * [encodeShapeBorder]
-  static Map<String, dynamic>? encodeCardTheme(CardThemeData? value) {
+  static Map<String, dynamic>? encodeCardTheme(CardTheme? value) {
+    Map<String, dynamic>? result;
+
+    if (value != null) {
+      result = <String, dynamic>{
+        'data': encodeCardThemeData(value.data),
+      };
+    }
+
+    return _stripDynamicNull(result);
+  }
+
+  /// Encodes the given [value] to a JSON representation.
+  ///
+  /// ```json
+  /// {
+  ///   "clipBehavior": "<Clip>",
+  ///   "color": "<Color>",
+  ///   "elevation": "<double>",
+  ///   "margin": "<EdgeInsetsGeometry>",
+  ///   "shadowColor": "<Color>",
+  ///   "shape": "<ShapeBorder>",
+  ///   "surfaceTintColor": "<Color>"
+  /// }
+  /// ```
+  ///
+  /// See also:
+  ///  * [encodeClip]
+  ///  * [encodeColor]
+  ///  * [encodeEdgeInsetsGeometry]
+  ///  * [encodeShapeBorder]
+  static Map<String, dynamic>? encodeCardThemeData(CardThemeData? value) {
     Map<String, dynamic>? result;
 
     if (value != null) {
@@ -1367,10 +1392,10 @@ class ThemeEncoder {
   /// ```json
   /// {
   ///   "checkColor": "<Color>",
-  ///   "fillColor": "<MaterialStateProperty<Color>>",
+  ///   "fillColor": "<WidgetStateProperty<Color>>",
   ///   "materialTapTargetSize": "<MaterialTapTargetSize>",
-  ///   "mouseCursor": "<MaterialStateProperty<MouseCursor>>",
-  ///   "overlayColor": "<MaterialStateProperty<Color>>",
+  ///   "mouseCursor": "<WidgetStateProperty<MouseCursor>>",
+  ///   "overlayColor": "<WidgetStateProperty<Color>>",
   ///   "shape": "<OutlinedBorder>",
   ///   "side": "<BorderSide>",
   ///   "splashRadius": "<double>",
@@ -1420,10 +1445,12 @@ class ThemeEncoder {
   ///
   /// ```json
   /// {
+  ///   "avatarBoxConstraints": "<BoxConstraints>",
   ///   "backgroundColor": "<Color>",
   ///   "brightness": "<Brightness>",
   ///   "checkmarkColor": "<Color>",
-  ///   "color": "<MaterialStateProperty<Color>>"
+  ///   "color": "<WidgetStateProperty<Color>>",
+  ///   "deleteIconBoxConstraints": "<BoxConstraints>",
   ///   "deleteIconColor": "<Color>",
   ///   "disabledColor": "<Color>",
   ///   "elevation": "<double>",
@@ -1446,11 +1473,12 @@ class ThemeEncoder {
   ///
   /// See also:
   ///  * [encodeBorderSide]
+  ///  * [encodeBoxConstraints]
   ///  * [encodeBrightness]
   ///  * [encodeColor]
   ///  * [encodeEdgeInsetsGeometry]
   ///  * [encodeIconThemeData]
-  ///  * [encodeWidgetStateProperty<Color>]
+  ///  * [encodeWidgetStateProperty]
   ///  * [encodeShapeBorder]
   ///  * [encodeTextStyle]
   static Map<String, dynamic>? encodeChipThemeData(ChipThemeData? value) {
@@ -1458,10 +1486,16 @@ class ThemeEncoder {
 
     if (value != null) {
       result = <String, dynamic>{
+        'avatarBoxConstraints': encodeBoxConstraints(
+          value.avatarBoxConstraints,
+        ),
         'backgroundColor': encodeColor(value.backgroundColor),
         'brightness': encodeBrightness(value.brightness),
         'checkmarkColor': encodeColor(value.checkmarkColor),
         'color': encodeWidgetStatePropertyColor(value.color),
+        'deleteIconBoxConstraints': encodeBoxConstraints(
+          value.deleteIconBoxConstraints,
+        ),
         'deleteIconColor': encodeColor(value.deleteIconColor),
         'disabledColor': encodeColor(value.disabledColor),
         'elevation': value.elevation,
@@ -1526,8 +1560,10 @@ class ThemeEncoder {
     String? result;
 
     if (value != null) {
-      // ignore: deprecated_member_use
-      final hex = value.value.toRadixString(16).padLeft(8, '0');
+      final hex = (value.a * 255).toInt().toRadixString(16).padLeft(2, '0') +
+          (value.r * 255).toInt().toRadixString(16).padLeft(2, '0') +
+          (value.g * 255).toInt().toRadixString(16).padLeft(2, '0') +
+          (value.b * 255).toInt().toRadixString(16).padLeft(2, '0');
       result = '#$hex';
     }
 
@@ -1538,37 +1574,52 @@ class ThemeEncoder {
   ///
   /// ```json
   /// {
-  ///   "background": "<Color>",
   ///   "brightness": "<Brightness>",
   ///   "error": "<Color>",
   ///   "errorContainer": "<Color>",
   ///   "inversePrimary": "<Color>",
   ///   "inverseSurface": "<Color>",
-  ///   "onBackground": "<Color>",
   ///   "onError": "<Color>",
   ///   "onErrorContainer": "<Color>",
   ///   "onInverseSurface": "<Color>",
+  ///   "onPrimaryFixed": "<Color>",
   ///   "onPrimary": "<Color>",
   ///   "onPrimaryContainer": "<Color>",
+  ///   "onPrimaryFixedVariant": "<Color>",
   ///   "onSecondary": "<Color>",
   ///   "onSecondaryContainer": "<Color>",
+  ///   "onSecondaryFixed": "<Color>",
+  ///   "onSecondaryFixedVariant": "<Color>",
   ///   "onSurface": "<Color>",
   ///   "onSurfaceVariant": "<Color>",
   ///   "onTertiary": "<Color>",
   ///   "onTertiaryContainer": "<Color>",
+  ///   "onTertiaryFixed": "<Color>",
+  ///   "onTertiaryFixedVariant": "<Color>",
   ///   "outline": "<Color>",
   ///   "outlineVariant": "<Color>",
   ///   "primary": "<Color>",
   ///   "primaryContainer": "<Color>",
-  ///   "scrim": "<Color>","
+  ///   "primaryFixed": "<Color>",
+  ///   "primaryFixedDim": "<Color>",
+  ///   "scrim": "<Color>",
   ///   "secondary": "<Color>",
   ///   "secondaryContainer": "<Color>",
+  ///   "secondaryFixed": "<Color>",
+  ///   "secondaryFixedDim": "<Color>",
   ///   "shadow": "<Color>",
   ///   "surface": "<Color>",
-  ///   "surfaceTint": "<Color>",
+  ///   "surfaceBright": "<Color>",
+  ///   "surfaceContainer": "<Color>",
   ///   "surfaceContainerHighest": "<Color>",
+  ///   "surfaceContainerHigh": "<Color>",
+  ///   "surfaceContainerLow": "<Color>",
+  ///   "surfaceContainerLowest": "<Color>",
+  ///   "surfaceDim": "<Color>",
   ///   "tertiary": "<Color>",
-  ///   "tertiaryContainer": "<Color>"
+  ///   "tertiaryContainer": "<Color>",
+  ///   "tertiaryFixed": "<Color>",
+  ///   "tertiaryFixedDim": "<Color>"
   /// }
   /// ```
   ///
@@ -1580,37 +1631,52 @@ class ThemeEncoder {
 
     if (value != null) {
       result = <String, dynamic>{
-        'background': encodeColor(value.surface),
         'brightness': encodeBrightness(value.brightness),
         'error': encodeColor(value.error),
         'errorContainer': encodeColor(value.errorContainer),
         'inversePrimary': encodeColor(value.inversePrimary),
         'inverseSurface': encodeColor(value.inverseSurface),
-        'onBackground': encodeColor(value.onSurface),
         'onError': encodeColor(value.onError),
         'onErrorContainer': encodeColor(value.onErrorContainer),
         'onInverseSurface': encodeColor(value.onInverseSurface),
+        'onPrimaryFixed': encodeColor(value.onPrimaryFixed),
         'onPrimary': encodeColor(value.onPrimary),
         'onPrimaryContainer': encodeColor(value.onPrimaryContainer),
+        'onPrimaryFixedVariant': encodeColor(value.onPrimaryFixedVariant),
         'onSecondary': encodeColor(value.onSecondary),
         'onSecondaryContainer': encodeColor(value.onSecondaryContainer),
+        'onSecondaryFixed': encodeColor(value.onSecondaryFixed),
+        'onSecondaryFixedVariant': encodeColor(value.onSecondaryFixedVariant),
         'onSurface': encodeColor(value.onSurface),
         'onSurfaceVariant': encodeColor(value.onSurfaceVariant),
         'onTertiary': encodeColor(value.onTertiary),
         'onTertiaryContainer': encodeColor(value.onTertiaryContainer),
+        'onTertiaryFixed': encodeColor(value.onTertiaryFixed),
+        'onTertiaryFixedVariant': encodeColor(value.onTertiaryFixedVariant),
         'outline': encodeColor(value.outline),
         'outlineVariant': encodeColor(value.outlineVariant),
         'primary': encodeColor(value.primary),
         'primaryContainer': encodeColor(value.primaryContainer),
+        'primaryFixed': encodeColor(value.primaryFixed),
+        'primaryFixedDim': encodeColor(value.primaryFixedDim),
         'scrim': encodeColor(value.scrim),
         'secondary': encodeColor(value.secondary),
         'secondaryContainer': encodeColor(value.secondaryContainer),
+        'surfaceBright': encodeColor(value.surfaceBright),
+        'surfaceContainer': encodeColor(value.surfaceContainer),
+        'surfaceContainerHigh': encodeColor(value.surfaceContainerHigh),
+        'surfaceContainerHighest': encodeColor(value.surfaceContainerHighest),
+        'secondaryFixed': encodeColor(value.secondaryFixed),
+        'secondaryFixedDim': encodeColor(value.secondaryFixedDim),
         'shadow': encodeColor(value.shadow),
         'surface': encodeColor(value.surface),
-        'surfaceContainerHighest': encodeColor(value.surfaceContainerHighest),
-        'surfaceTint': encodeColor(value.surfaceTint),
+        'surfaceContainerLow': encodeColor(value.surfaceContainerLow),
+        'surfaceContainerLowest': encodeColor(value.surfaceContainerLowest),
+        'surfaceDim': encodeColor(value.surfaceDim),
         'tertiary': encodeColor(value.tertiary),
         'tertiaryContainer': encodeColor(value.tertiaryContainer),
+        'tertiaryFixed': encodeColor(value.tertiaryFixed),
+        'tertiaryFixedDim': encodeColor(value.tertiaryFixedDim),
       };
     }
 
@@ -1679,6 +1745,7 @@ class ThemeEncoder {
   ///
   /// ```json
   /// {
+  ///   "actionSmallTextStyle": "<TextStyle>",
   ///   "actionTextStyle": "<TextStyle>",
   ///   "dateTimePickerTextStyle": "<TextStyle>",
   ///   "navActionTextStyle": "<TextStyle>",
@@ -1701,6 +1768,7 @@ class ThemeEncoder {
 
     if (value != null) {
       result = <String, dynamic>{
+        'actionSmallTextStyle': encodeTextStyle(value.actionSmallTextStyle),
         'actionTextStyle': encodeTextStyle(value.actionTextStyle),
         'dateTimePickerTextStyle': encodeTextStyle(
           value.dateTimePickerTextStyle,
@@ -1762,9 +1830,10 @@ class ThemeEncoder {
   ///   "backgroundColor": "<Color>",
   ///   "cancelButtonStyle": "<ButtonStyle>",
   ///   "confirmButtonStyle": "<ButtonStyle>",
-  ///   "dayBackgroundColor": "<MaterialStateProperty<Color>>",
-  ///   "dayForegroundColor": "<MaterialStateProperty<Color>>",
-  ///   "dayOverlayColor": "<MaterialStateProperty<Color>>",
+  ///   "dayBackgroundColor": "<WidgetStateProperty<Color>>",
+  ///   "dayForegroundColor": "<WidgetStateProperty<Color>>",
+  ///   "dayOverlayColor": "<WidgetStateProperty<OutlinedBox>>",
+  ///   "dayShape": "<WidgetStateProperty<"
   ///   "dayStyle: "<TextStyle>",
   ///   "dividerColor": "<Color>",
   ///   "elevation": "<double>",
@@ -1773,6 +1842,7 @@ class ThemeEncoder {
   ///   "headerHeadlineStyle": "<TextStyle>",
   ///   "headerHelpStyle": "<TextStyle>",
   ///   "inputDecorationTheme": "<InputDecorationTheme>",
+  ///   "locale": "<Locale>",
   ///   "rangePickerBackgroundColor": "<Color>",
   ///   "rangePickerElevation": "<double>",
   ///   "rangePickerHeaderBackgroundColor": "<Color>",
@@ -1783,17 +1853,17 @@ class ThemeEncoder {
   ///   "rangePickerShape": "<ShapeBorder>",
   ///   "rangePickerSurfaceTintColor": "<Color>",
   ///   "rangeSelectionBackgroundColor": "<Color>",
-  ///   "rangeSelectionOverlayColor": "<MaterialStateProperty<Color>>",
+  ///   "rangeSelectionOverlayColor": "<WidgetStateProperty<Color>>",
   ///   "shadowColor": "<Color>",
   ///   "shape": "<ShapeBorder>",
   ///   "surfaceTintColor": "<Color>",
-  ///   "todayBackgroundColor": "<MaterialStateProperty<Color>>",
+  ///   "todayBackgroundColor": "<WidgetStateProperty<Color>>",
   ///   "todayBorder": "<ShapeBorder>",
-  ///   "todayForegroundColor": "<MaterialStateProperty<Color>>",
+  ///   "todayForegroundColor": "<WidgetStateProperty<Color>>",
   ///   "weekdayStyle": "<TextStyle>",
-  ///   "yearBackgroundColor": "<MaterialStateProperty<Color>>",
-  ///   "yearForegroundColor": "<MaterialStateProperty<Color>>",
-  ///   "yearOverlayColor": "<MaterialStateProperty<Color>>",
+  ///   "yearBackgroundColor": "<WidgetStateProperty<Color>>",
+  ///   "yearForegroundColor": "<WidgetStateProperty<Color>>",
+  ///   "yearOverlayColor": "<WidgetStateProperty<Color>>",
   ///   "yearStyle": "<TextStyle>"
   /// }
   /// ```
@@ -1802,9 +1872,10 @@ class ThemeEncoder {
   ///  * [encodeBorderSide]
   ///  * [encodeColor]
   ///  * [encodeInputDecorationTheme]
-  ///  * [encodeWidgetStatePropertyColor]
   ///  * [encodeShapeBorder]
   ///  * [encodeTextStyle]
+  ///  * [encodeWidgetStatePropertyColor]
+  ///  * [encodeWidgetStatePropertyOutlinedBorder]
   static Map<String, dynamic>? encodeDatePickerThemeData(
     DatePickerThemeData? value,
   ) {
@@ -1833,6 +1904,7 @@ class ThemeEncoder {
         'inputDecorationTheme': encodeInputDecorationTheme(
           value.inputDecorationTheme,
         ),
+        'locale': encodeLocale(value.locale),
         'rangePickerBackgroundColor': encodeColor(
           value.rangePickerBackgroundColor,
         ),
@@ -1893,15 +1965,16 @@ class ThemeEncoder {
   /// {
   ///   "checkboxHorizontalMargin": "<double>",
   ///   "columnSpacing": "<double>",
-  ///   "dataRowColor": "<MaterialStateProperty<Color>>",
-  ///   "dataRowCursor": "<MaterialStateProperty<MouseCursor>",
+  ///   "dataRowColor": "<WidgetStateProperty<Color>>",
+  ///   "dataRowCursor": "<WidgetStateProperty<MouseCursor>",
   ///   "dataRowMaxHeight": "<double>",
   ///   "dataRowMinHeight": "<double>",
   ///   "dataTextStyle": "<TextStyle,
   ///   "decoration": "<BoxDecoration>",
   ///   "dividerThickness": "<double>",
-  ///   "headingCellCursor": "<MaterialStateProperty<MouseCursor>",
-  ///   "headingRowColor": "<MaterialStateProperty<Color>>",
+  ///   "headingCellCursor": "<WidgetStateProperty<MouseCursor>",
+  ///   "headingRowAlignment": "<MainAxisAlignment>"
+  ///   "headingRowColor": "<WidgetStateProperty<Color>>",
   ///   "headingRowHeight": "<double>",
   ///   "headingTextStyle": "<TextStyle>",
   ///   "horizontalMargin": "<double>"
@@ -1943,6 +2016,9 @@ class ThemeEncoder {
         'dividerThickness': value.dividerThickness,
         'headingCellCursor': encodeWidgetStatePropertyMouseCursor(
           value.headingCellCursor,
+        ),
+        'headingRowAlignment': encodeMainAxisAlignment(
+          value.headingRowAlignment,
         ),
         'headingRowColor': encodeWidgetStatePropertyColor(
           value.headingRowColor,
@@ -2035,9 +2111,12 @@ class ThemeEncoder {
   ///   "actionsPadding": "<EdgeInsetsGeometry>",
   ///   "alignment": "<Alignment>",
   ///   "backgroundColor": "<Color>",
+  ///   "barrierColor": "<Color>",
+  ///   "clipBehavior": "<Clip>",
   ///   "contentTextStyle": "<TextStyle>",
   ///   "elevation": "<double>",
   ///   "iconColor": "<Color>",
+  ///   "insetPadding": "<EdgeInsets>",
   ///   "shadowColor": "<Color>",
   ///   "shape": "<ShapeBorder>",
   ///   "surfaceColor": "<Color>",
@@ -2048,10 +2127,70 @@ class ThemeEncoder {
   /// See also:
   ///  * [encodeAlignment]
   ///  * [encodeBrightness]
+  ///  * [encodeClip]
   ///  * [encodeColor]
+  ///  * [encodeEdgeInsets]
+  ///  * [encodeEdgeInsetsGeometry]
   ///  * [encodeShapeBorder]
   ///  * [encodeTextStyle]
-  static Map<String, dynamic>? encodeDialogTheme(DialogThemeData? value) {
+  static Map<String, dynamic>? encodeDialogTheme(DialogTheme? value) {
+    Map<String, dynamic>? result;
+
+    if (value != null) {
+      final data = value.data;
+      result = <String, dynamic>{
+        'data': {
+          'actionsPadding': encodeEdgeInsetsGeometry(
+            data.actionsPadding as EdgeInsets?,
+          ),
+          'alignment': encodeAlignmentGeometry(data.alignment),
+          'backgroundColor': encodeColor(data.backgroundColor),
+          'clipBehavior': encodeClip(data.clipBehavior),
+          'barrierColor': encodeColor(data.barrierColor),
+          'contentTextStyle': encodeTextStyle(data.contentTextStyle),
+          'elevation': data.elevation,
+          'insetsPadding': encodeEdgeInsets(data.insetPadding),
+          'shadowColor': encodeColor(data.shadowColor),
+          'shape': encodeShapeBorder(data.shape),
+          'surfaceTintColor': encodeColor(data.shadowColor),
+          'titleTextStyle': encodeTextStyle(data.titleTextStyle),
+        },
+      };
+    }
+
+    return _stripDynamicNull(result);
+  }
+
+  /// Encodes the given [value] to a JSON representation.
+  ///
+  /// ```json
+  /// {
+  ///   "actionsPadding": "<EdgeInsetsGeometry>",
+  ///   "alignment": "<Alignment>",
+  ///   "backgroundColor": "<Color>",
+  ///   "barrierColor": "<Color>",
+  ///   "clipBehavior": "<Clip>",
+  ///   "contentTextStyle": "<TextStyle>",
+  ///   "elevation": "<double>",
+  ///   "iconColor": "<Color>",
+  ///   "insetPadding": "<EdgeInsets>",
+  ///   "shadowColor": "<Color>",
+  ///   "shape": "<ShapeBorder>",
+  ///   "surfaceColor": "<Color>",
+  ///   "titleTextStyle": "<TextStyle>"
+  /// }
+  /// ```
+  ///
+  /// See also:
+  ///  * [encodeAlignment]
+  ///  * [encodeBrightness]
+  ///  * [encodeClip]
+  ///  * [encodeColor]
+  ///  * [encodeEdgeInsets]
+  ///  * [encodeEdgeInsetsGeometry]
+  ///  * [encodeShapeBorder]
+  ///  * [encodeTextStyle]
+  static Map<String, dynamic>? encodeDialogThemeData(DialogThemeData? value) {
     Map<String, dynamic>? result;
 
     if (value != null) {
@@ -2061,13 +2200,59 @@ class ThemeEncoder {
         ),
         'alignment': encodeAlignmentGeometry(value.alignment),
         'backgroundColor': encodeColor(value.backgroundColor),
+        'barrierColor': encodeColor(value.barrierColor),
+        'clipBehavior': encodeClip(value.clipBehavior),
         'contentTextStyle': encodeTextStyle(value.contentTextStyle),
         'elevation': value.elevation,
+        'insetsPadding': encodeEdgeInsets(value.insetPadding),
         'shadowColor': encodeColor(value.shadowColor),
         'shape': encodeShapeBorder(value.shape),
         'surfaceTintColor': encodeColor(value.shadowColor),
         'titleTextStyle': encodeTextStyle(value.titleTextStyle),
       };
+    }
+
+    return _stripDynamicNull(result);
+  }
+
+  /// Encodes the given [value] to the String representation.  Supported values
+  /// are:
+  ///  * `down`
+  ///  * `endToStart`
+  ///  * `horizontal'
+  ///  * `none'
+  ///  * `startToEnd`
+  ///  * `up`
+  ///  * `vertical`
+  ///
+  /// All other values, including `null`, will result in `null`.
+  static String? encodeDismissDirection(DismissDirection? value) {
+    String? result;
+
+    if (value != null) {
+      switch (value) {
+        case DismissDirection.down:
+          result = 'down';
+          break;
+        case DismissDirection.endToStart:
+          result = 'endToStart';
+          break;
+        case DismissDirection.horizontal:
+          result = 'horizontal';
+          break;
+        case DismissDirection.none:
+          result = 'none';
+          break;
+        case DismissDirection.startToEnd:
+          result = 'startToEnd';
+          break;
+        case DismissDirection.up:
+          result = 'up';
+          break;
+        case DismissDirection.vertical:
+          result = 'vertical';
+          break;
+      }
     }
 
     return _stripDynamicNull(result);
@@ -2330,6 +2515,7 @@ class ThemeEncoder {
   ///   "collapsedShape": "<ShapeBorder>",
   ///   "collapsedTextColor": "<Color>",
   ///   "expandedAlignment": "<AlignmentGeometry>",
+  ///   "expansionAnimationStyle": "<AnimationStyle>",
   ///   "iconColor": "<Color>",
   ///   "shape": "<ShapeBorder>",
   ///   "textColor": "<Color>",
@@ -2341,6 +2527,7 @@ class ThemeEncoder {
   ///  * [encodeAlignment]
   ///  * [encodeColor]
   ///  * [encodeEdgeInsetsGeometry]
+  ///  * [encodeExpansionAnimationStyle]
   ///  * [encodeShapeBorder]
   static Map<String, dynamic>? encodeExpansionTileThemeData(
     ExpansionTileThemeData? value,
@@ -2358,6 +2545,9 @@ class ThemeEncoder {
         'collapsedShape': encodeShapeBorder(value.collapsedShape),
         'collapsedTextColor': encodeColor(value.collapsedTextColor),
         'expandedAlignment': encodeAlignmentGeometry(value.expandedAlignment),
+        'expansionAnimationStyle': encodeAnimationStyle(
+          value.expansionAnimationStyle,
+        ),
         'iconColor': encodeColor(value.iconColor),
         'shape': encodeShapeBorder(value.shape),
         'textColor': encodeColor(value.textColor),
@@ -2553,7 +2743,7 @@ class ThemeEncoder {
   ///   "hoverElevation": "<double>",
   ///   "iconSize": "<double>",
   ///   "largeSizeConstraints": "<BoxConstraints>",
-  ///   "mouseCursor": "<MaterialStateProperty<MouseCursor>>",
+  ///   "mouseCursor": "<WidgetStateProperty<MouseCursor>>",
   ///   "shape": "<ShapeBorder>",
   ///   "sizeConstraints": "<BoxConstraints>",
   ///   "smallSizeConstraints": "<BoxConstraints>",
@@ -2966,6 +3156,8 @@ class ThemeEncoder {
   ///
   /// ```json
   /// {
+  ///   "applyTextScaling": "<bool>",
+  ///   "blendMode": "<BlendMode>",
   ///   "color": "<Color>",
   ///   "fill": "<double>",
   ///   "grade": "<double>",
@@ -2983,6 +3175,8 @@ class ThemeEncoder {
 
     if (value != null) {
       result = {
+        'applyTextScaling': value.applyTextScaling,
+        'blendMode': encodeBlendMode(value.blendMode),
         'color': encodeColor(value.color),
         'fill': value.fill,
         'grade': value.grade,
@@ -3029,6 +3223,7 @@ class ThemeEncoder {
   /// {
   ///   "codePoint": "<int>",
   ///   "fontFamily": "<String>",
+  ///   "fontFamilyFallback": "<List<String>>",
   ///   "fontPackage": "<String>",
   ///   "matchTextDirection": "<bool>"
   /// }
@@ -3040,6 +3235,7 @@ class ThemeEncoder {
       result = {
         'codePoint': value.codePoint,
         'fontFamily': value.fontFamily,
+        'fontFamilyFallback': value.fontFamilyFallback,
         'fontPackage': value.fontPackage,
         'matchTextDirection': value.matchTextDirection,
       };
@@ -3052,6 +3248,7 @@ class ThemeEncoder {
   ///
   /// ```json
   /// {
+  ///   "applyTextScaling": "<bool>",
   ///   "color": "<Color>",
   ///   "fill": "<Color>",
   ///   "grade": "<double>",
@@ -3070,6 +3267,7 @@ class ThemeEncoder {
 
     if (value != null) {
       result = <String, dynamic>{
+        'applyTextScaling': value.applyTextScaling,
         'color': encodeColor(value.color),
         'fill': value.fill,
         'grade': value.grade,
@@ -3273,8 +3471,11 @@ class ThemeEncoder {
   ///   "labelStyle": "<TextStyle>",
   ///   "outlineBorder": "<BorderSide>",
   ///   "prefixIconColor": "<Color>",
+  ///   "prefixIconConstraints": "<Color>",
   ///   "prefixStyle": "<TextStyle>",
-  ///   "suffixStyle": "<Color>",
+  ///   "suffixIconConstraints": "<BoxConstraints>",
+  ///   "suffixIconColor": "<Color>",
+  ///   "suffixIconConstraints": "<BoxConstraints>",
   ///   "suffixStyle": "<TextStyle>"
   /// }
   /// ```
@@ -3327,8 +3528,14 @@ class ThemeEncoder {
         'isDense': value.isDense,
         'labelStyle': encodeTextStyle(value.labelStyle),
         'outlineBorder': encodeBorderSide(value.outlineBorder),
+        'prefixIconConstraints': encodeBoxConstraints(
+          value.prefixIconConstraints,
+        ),
         'prefixIconColor': encodeColor(value.prefixIconColor),
         'prefixStyle': encodeTextStyle(value.prefixStyle),
+        'suffixIconConstraints': encodeBoxConstraints(
+          value.suffixIconConstraints,
+        ),
         'suffixIconColor': encodeColor(value.suffixIconColor),
         'suffixStyle': encodeTextStyle(value.suffixStyle),
       };
@@ -3366,6 +3573,33 @@ class ThemeEncoder {
         result = 'ripple';
       } else if (value.runtimeType == sparkleType) {
         result = 'sparkle';
+      }
+    }
+
+    return _stripDynamicNull(result);
+  }
+
+  /// Encodes the given [value] to the String representation.  Supported values
+  /// are:
+  ///  * `leading`
+  ///  * `platform`
+  ///  * `trailing`
+  ///
+  /// All other values, including `null`, will result in `null`.
+  static String? encodeListTileControlAffinity(ListTileControlAffinity? value) {
+    String? result;
+
+    if (value != null) {
+      switch (value) {
+        case ListTileControlAffinity.leading:
+          result = 'leading';
+          break;
+        case ListTileControlAffinity.platform:
+          result = 'platform';
+          break;
+        case ListTileControlAffinity.trailing:
+          result = 'trailing';
+          break;
       }
     }
 
@@ -3435,13 +3669,14 @@ class ThemeEncoder {
   /// ```json
   /// {
   ///   "contentPadding": "<EdgeInsetsGeometry>",
+  ///   "controlAffinity": "<ListTileControlAffinity>",
   ///   "dense": "<bool>",
   ///   "enableFeedback": "<bool>",
   ///   "horizontalTitleGap": "<double>",
   ///   "iconColor": "<Color>",
   ///   "minLeadingWidth": "<double>",
   ///   "minVerticalPadding": "<double>",
-  ///   "mouseCursor": "<MaterialStateProperty<MouseCursor>>",
+  ///   "mouseCursor": "<WidgetStateProperty<MouseCursor>>",
   ///   "selectedColor": "<Color>",
   ///   "selectedTileColor": "<Color>",
   ///   "shape": "<ShapeBorder>",
@@ -3461,6 +3696,7 @@ class ThemeEncoder {
         'contentPadding': encodeEdgeInsetsGeometry(
           value.contentPadding as EdgeInsets?,
         ),
+        'controlAffinity': encodeListTileControlAffinity(value.controlAffinity),
         'dense': value.dense,
         'enableFeedback': value.enableFeedback,
         'horizontalTitleGap': value.horizontalTitleGap,
@@ -3469,6 +3705,7 @@ class ThemeEncoder {
           value.leadingAndTrailingTextStyle,
         ),
         'minLeadingWidth': value.minLeadingWidth,
+        'minTileHeight': value.minTileHeight,
         'minVerticalPadding': value.minVerticalPadding,
         'mouseCursor': encodeWidgetStatePropertyMouseCursor(
           value.mouseCursor,
@@ -3630,8 +3867,7 @@ class ThemeEncoder {
 
     if (value != null) {
       result = <String, dynamic>{
-        // ignore: deprecated_member_use
-        'primary': encodeColor(Color(value.value)),
+        'primary': encodeColor(Color(colorToInt(value)!)),
         'swatches': {
           '50': encodeColor(value.shade50),
           '100': encodeColor(value.shade100),
@@ -3838,16 +4074,16 @@ class ThemeEncoder {
   /// ```json
   /// {
   ///   "alignment": "<Alignment>",
-  ///   "backgroundColor": "<MaterialStateProperty<Color>>",
-  ///   "elevation": "<MaterialStateProperty<double>>",
-  ///   "fixedSize": "<MaterialStateProperty<Size>>",
-  ///   "maximumSize": "<MaterialStateProperty<Size>>",
-  ///   "minimumSize": "<MaterialStateProperty<Size>>",
-  ///   "padding": "<MaterialStateProperty<EdgeInsets>>",
-  ///   "shadowColor": "<MaterialStateProperty<Color>>",
-  ///   "shape": "<MaterialStateProperty<OutlinedBorder>>",
-  ///   "side": "<MaterialStateProperty<BorderSide>>",
-  ///   "surfaceTintColor": "<MaterialStateProperty<Color>>",
+  ///   "backgroundColor": "<WidgetStateProperty<Color>>",
+  ///   "elevation": "<WidgetStateProperty<double>>",
+  ///   "fixedSize": "<WidgetStateProperty<Size>>",
+  ///   "maximumSize": "<WidgetStateProperty<Size>>",
+  ///   "minimumSize": "<WidgetStateProperty<Size>>",
+  ///   "padding": "<WidgetStateProperty<EdgeInsets>>",
+  ///   "shadowColor": "<WidgetStateProperty<Color>>",
+  ///   "shape": "<WidgetStateProperty<OutlinedBorder>>",
+  ///   "side": "<WidgetStateProperty<BorderSide>>",
+  ///   "surfaceTintColor": "<WidgetStateProperty<Color>>",
   ///   "visualDensity": "<VisualDensity>",
   /// }
   /// ```
@@ -4170,11 +4406,12 @@ class ThemeEncoder {
   ///   "backgroundColor": "<Color>",
   ///   "elevation": "<double>",
   ///   "height": "<double>",
-  ///   "iconTheme": "<MaterialStateProperty<IconThemeData>>",
+  ///   "iconTheme": "<WidgetStateProperty<IconThemeData>>",
   ///   "indicatorColor": "<Color>",
   ///   "indicatorShape": "<ShapeBorder>",
   ///   "labelBehavior": "<NavigationDestinationLabelBehavior>",
-  ///   "labelTextStyle": "<MaterialStateProperty<TextStyle>>",
+  ///   "labelTextStyle": "<WidgetStateProperty<TextStyle>>",
+  ///   "overlayColor": "<WidgetStateProperty<Color>",
   ///   "shadowColor": "<Color>",
   ///   "surfaceTintColor": "<Color>"
   /// }
@@ -4182,6 +4419,7 @@ class ThemeEncoder {
   ///
   /// See also:
   ///  * [encodeColor]
+  ///  * [encodeWidgetStatePropertyColor]
   ///  * [encodeWidgetStatePropertyIconThemeData]
   ///  * [encodeWidgetStatePropertyTextStyle]
   ///  * [encodeNavigationDestinationLabelBehavior]
@@ -4206,6 +4444,7 @@ class ThemeEncoder {
         'labelTextStyle': encodeWidgetStatePropertyTextStyle(
           value.labelTextStyle,
         ),
+        'overlayColor': encodeWidgetStatePropertyColor(value.overlayColor),
         'shadowColor': encodeColor(value.shadowColor),
         'surfaceTintColor': encodeColor(value.surfaceTintColor),
       };
@@ -4683,8 +4922,9 @@ class ThemeEncoder {
   ///   "enableFeedback": "<bool>",
   ///   "iconColor": "<Color>",
   ///   "iconSize": "<double>",
-  ///   "labelTextStyle": "<MaterialStateProperty<TextStyle>>",
-  ///   "mouseCursor": "<MaterialStateProperty<MouseCursor>>",
+  ///   "labelTextStyle": "<WidgetStateProperty<TextStyle>>",
+  ///   "menuPadding": "<EdgeInsetsGeometry>",
+  ///   "mouseCursor": "<WidgetStateProperty<MouseCursor>>",
   ///   "position": "<PopupMenuPosition>",
   ///   "shadowColor": "<Color>",
   ///   "shape": "<ShapeBorder>",
@@ -4695,11 +4935,12 @@ class ThemeEncoder {
   ///
   /// See also:
   ///  * [encodeColor]
-  ///  * [encodeWidgetStatePropertyMouseCursor]
-  ///  * [encodeWidgetStatePropertyTextStyle]
+  ///  * [encodeEdgeInsetsGeometry]
   ///  * [encodePopupMenuPosition]
   ///  * [encodeShapeBorder]
   ///  * [encodeTextStyle]
+  ///  * [encodeWidgetStatePropertyMouseCursor]
+  ///  * [encodeWidgetStatePropertyTextStyle]
   static Map<String, dynamic>? encodePopupMenuThemeData(
     PopupMenuThemeData? value,
   ) {
@@ -4715,6 +4956,7 @@ class ThemeEncoder {
         'labelTextStyle': encodeWidgetStatePropertyTextStyle(
           value.labelTextStyle,
         ),
+        'menuPadding': encodeEdgeInsetsGeometry(value.menuPadding),
         'mouseCursor': encodeWidgetStatePropertyMouseCursor(
           value.mouseCursor,
         ),
@@ -5126,12 +5368,12 @@ class ThemeEncoder {
   ///   "mainAxisMargin": "<double>",
   ///   "minThumbLength": "<double>",
   ///   "radius": "<Radius>",
-  ///   "thickness": "<MaterialStateProperty<double>>",
-  ///   "thumbColor": "<MaterialStateProperty<Color>>",
-  ///   "thumbVisibility": "<MaterialStateProperty<bool>>",
-  ///   "trackBorderColor": "<MaterialStateProperty<Color>>",
-  ///   "trackColor": "<MaterialStateProperty<Color>>",
-  ///   "trackVisibility": "<MaterialStateProperty<bool>>"
+  ///   "thickness": "<WidgetStateProperty<double>>",
+  ///   "thumbColor": "<WidgetStateProperty<Color>>",
+  ///   "thumbVisibility": "<WidgetStateProperty<bool>>",
+  ///   "trackBorderColor": "<WidgetStateProperty<Color>>",
+  ///   "trackColor": "<WidgetStateProperty<Color>>",
+  ///   "trackVisibility": "<WidgetStateProperty<bool>>"
   /// }
   /// ```
   ///
@@ -5172,22 +5414,22 @@ class ThemeEncoder {
     return _stripDynamicNull(result);
   }
 
-  /// Encodes the given [value] to the JSON representation. This provides the
+  /// Encodes the given [value] to the JSON representation  This provides the
   /// given [value] to follow the structure below:
   ///
   /// ```json
   /// {
-  ///   "backgroundColor": "<MaterialStateProperty<Color>>",
+  ///   "backgroundColor": "<WidgetStateProperty<Color>>",
   ///   "constraints": "<BoxConstraints>",
-  ///   "elevation": "<MaterialStateProperty<double>>",
-  ///   "hintStyle": "<MaterialStateProperty<TextStyle>>",
-  ///   "overlayColor": "<MaterialStateProperty<Color>>",
-  ///   "padding": "<MaterialStateProperty<EdgeInsetsGeometry>>",
-  ///   "shadowColor": "<MaterialStateProperty<Color>>",
-  ///   "shape": MaterialStateProperty<OutlinedBorder>,
-  ///   "side": "<MaterialStateProperty<BorderSide>>",
-  ///   "surfaceTintColor": "<MaterialStateProperty<Color>>",
-  ///   "textStyle": "<MaterialStateProperty<TextStyle>>",
+  ///   "elevation": "<WidgetStateProperty<double>>",
+  ///   "hintStyle": "<WidgetStateProperty<TextStyle>>",
+  ///   "overlayColor": "<WidgetStateProperty<Color>>",
+  ///   "padding": "<WidgetStateProperty<EdgeInsetsGeometry>>",
+  ///   "shadowColor": "<WidgetStateProperty<Color>>",
+  ///   "shape": WidgetStateProperty<OutlinedBorder>,
+  ///   "side": "<WidgetStateProperty<BorderSide>>",
+  ///   "surfaceTintColor": "<WidgetStateProperty<Color>>",
+  ///   "textStyle": "<WidgetStateProperty<TextStyle>>",
   ///   "textCapitalization": "<TextCapitalization>"
   /// }
   /// ```
@@ -5560,7 +5802,7 @@ class ThemeEncoder {
   ///   "inactiveTickMarkColor": "<Color>",
   ///   "inactiveTrackColor": "<Color>",
   ///   "minThumbSeparation": "<double>",
-  ///   "mouseCursor": "<MaterialStateProperty<MouseCursor>>",
+  ///   "mouseCursor": "<WidgetStateProperty<MouseCursor>>",
   ///   "overlappingShapeStrokeColor": "<Color>",
   ///   "overlayColor": "<Color>",
   ///   "overlayShape": "<SliderComponentShape>",
@@ -5577,6 +5819,7 @@ class ThemeEncoder {
   ///   "trackShape": "<SliderTrackShape>",
   ///   "valueIndicatorColor": "<Color>",
   ///   "valueIndicatorShape": "<SliderComponentShape>",
+  ///   "valueIndicatorStrokeColor": "<Color>",
   ///   "valueIndicatorTextStyle": "<TextStyle>"
   /// }
   /// ```
@@ -5648,6 +5891,9 @@ class ThemeEncoder {
         'valueIndicatorColor': encodeColor(value.valueIndicatorColor),
         'valueIndicatorShape': encodeSliderComponentShape(
           value.valueIndicatorShape,
+        ),
+        'valueIndicatorStrokeColor': encodeColor(
+          value.valueIndicatorStrokeColor,
         ),
         'valueIndicatorTextStyle': encodeTextStyle(
           value.valueIndicatorTextStyle,
@@ -5797,6 +6043,7 @@ class ThemeEncoder {
   ///   "behavior": "<SnackBarBehavior>",
   ///   "closeIconColor": "<Color>",
   ///   "contentTextStyle": "<TextStyle>",
+  ///   "dismissDirection": "<DismissDirection>",
   ///   "disabledActionBackgroundColor": "<Color>",
   ///   "disabledActionTextColor": "<Color>",
   ///   "elevation": "<double>",
@@ -5809,6 +6056,7 @@ class ThemeEncoder {
   ///
   /// See also:
   ///  * [encodeColor]
+  ///  * [encodeDismissDirection]
   ///  * [encodeEdgeInsetsGeometry]
   ///  * [encodeSnackBarBehavior]
   ///  * [encodeShapeBorder]
@@ -5831,6 +6079,7 @@ class ThemeEncoder {
           value.disabledActionBackgroundColor,
         ),
         'disabledActionTextColor': encodeColor(value.disabledActionTextColor),
+        'dismissDirection': encodeDismissDirection(value.dismissDirection),
         'elevation': value.elevation,
         'insetPadding': encodeEdgeInsetsGeometry(value.insetPadding),
         'shape': encodeShapeBorder(value.shape),
@@ -5917,23 +6166,25 @@ class ThemeEncoder {
   /// ```json
   /// {
   ///   "materialTapTargetSize": "<MaterialTapTargetSize>",
-  ///   "mouseCursor": "<MaterialStateProperty<MouseCursor>>",
-  ///   "overlayColor": "<MaterialStateProperty<Color>>",
+  ///   "mouseCursor": "<WidgetStateProperty<MouseCursor>>",
+  ///   "overlayColor": "<WidgetStateProperty<Color>>",
+  ///   "padding": "<EdgeInsetsGeometry>",
   ///   "splashRadius": "<double>",
-  ///   "thumbColor": "<MaterialStateProperty<Color>>",
-  ///   "trackColor": "<MaterialStateProperty<Color>>",
-  ///   "trackOutlineColor": "<MaterialStateProperty<Color>>"
-  ///   "trackOutlineWidth": "<MaterialStateProperty<double>>"
+  ///   "thumbColor": "<WidgetStateProperty<Color>>",
+  ///   "trackColor": "<WidgetStateProperty<Color>>",
+  ///   "trackOutlineColor": "<WidgetStateProperty<Color>>"
+  ///   "trackOutlineWidth": "<WidgetStateProperty<double>>"
   /// }
   /// ```
   ///
   /// See also:
   ///  * [encodeColor]
+  ///  * [encodeEdgeInsetsGeometry]
+  ///  * [encodeMaterialTapTargetSize]
+  ///  * [encodeMouseCursor]
   ///  * [encodeWidgetStatePropertyColor]
   ///  * [encodeWidgetStatePropertyDouble]
   ///  * [encodeWidgetStatePropertyMouseCursor]
-  ///  * [encodeMaterialTapTargetSize]
-  ///  * [encodeMouseCursor]
   static Map<String, dynamic>? encodeSwitchThemeData(
     SwitchThemeData? value, {
     bool validate = true,
@@ -5951,6 +6202,7 @@ class ThemeEncoder {
         'overlayColor': encodeWidgetStatePropertyColor(
           value.overlayColor,
         ),
+        'padding': encodeEdgeInsetsGeometry(value.padding),
         'splashRadius': value.splashRadius,
         'thumbColor': encodeWidgetStatePropertyColor(
           value.thumbColor,
@@ -6087,6 +6339,7 @@ class ThemeEncoder {
   ///
   /// ```json
   /// {
+  ///   "data": "<TabBarThemeData>",
   ///   "dividerColor": "<Color>",
   ///   "dividerHeight": "<double>",
   ///   "indicatorColor": "<Color>",
@@ -6094,10 +6347,11 @@ class ThemeEncoder {
   ///   "labelPadding": "<EdgeInsetsGeometry>",
   ///   "labelColor": "<Color>",
   ///   "labelStyle": "<TextStyle>",
-  ///   "mouseCursor": "<MaterialStateProperty<MouseCursor>>",
-  ///   "overlayColor": "<MaterialStateProperty<Color>>",
+  ///   "mouseCursor": "<WidgetStateProperty<MouseCursor>>",
+  ///   "overlayColor": "<WidgetStateProperty<Color>>",
   ///   "splashFactory": "<InteractiveInkSplashFactory>",
   ///   "tabAlignment": "<TabAlignment>"
+  ///   "textScaler": "<TextScaler>",
   ///   "unselectedLabelColor": "<Color>",
   ///   "unselectedLabelStyle": "<TextStyle>",
   /// }
@@ -6112,7 +6366,73 @@ class ThemeEncoder {
   ///  * [encodeTabAlignment]
   ///  * [encodeTabBarIndicatorSize]
   ///  * [encodeTextStyle]
-  static Map<String, dynamic>? encodeTabBarTheme(TabBarThemeData? value) {
+  static Map<String, dynamic>? encodeTabBarTheme(TabBarTheme? value) {
+    Map<String, dynamic>? result;
+
+    if (value != null) {
+      final data = value.data;
+      result = <String, dynamic>{
+        'data': {
+          'dividerColor': encodeColor(data.dividerColor),
+          'dividerHeight': data.dividerHeight,
+          'indicatorColor': encodeColor(data.dividerColor),
+          'indicatorSize': encodeTabBarIndicatorSize(data.indicatorSize),
+          'labelPadding':
+              encodeEdgeInsetsGeometry(data.labelPadding as EdgeInsets?),
+          'labelColor': encodeColor(data.labelColor),
+          'labelStyle': encodeTextStyle(data.labelStyle),
+          'mouseCursor': encodeWidgetStatePropertyMouseCursor(
+            data.mouseCursor,
+          ),
+          'overlayColor': encodeWidgetStatePropertyColor(
+            data.overlayColor,
+          ),
+          'splashFactory': encodeInteractiveInkFeatureFactory(
+            data.splashFactory,
+          ),
+          'tabAlignment': encodeTabAlignment(data.tabAlignment),
+          'textScaler': encodeTextScaler(data.textScaler),
+          'unselectedLabelColor': encodeColor(data.unselectedLabelColor),
+          'unselectedLabelStyle': encodeTextStyle(data.unselectedLabelStyle),
+        },
+      };
+    }
+
+    return _stripDynamicNull(result);
+  }
+
+  /// Encodes the given [value] to the JSON representation.
+  ///
+  /// ```json
+  /// {
+  ///   "dividerColor": "<Color>",
+  ///   "dividerHeight": "<double>",
+  ///   "indicatorColor": "<Color>",
+  ///   "indicatorSize": "<TabBarIndicatorSize>",
+  ///   "labelPadding": "<EdgeInsetsGeometry>",
+  ///   "labelColor": "<Color>",
+  ///   "labelStyle": "<TextStyle>",
+  ///   "mouseCursor": "<WidgetStateProperty<MouseCursor>>",
+  ///   "overlayColor": "<WidgetStateProperty<Color>>",
+  ///   "splashFactory": "<InteractiveInkSplashFactory>",
+  ///   "tabAlignment": "<TabAlignment>",
+  ///   "textScaler": "<TextScaler>",
+  ///   "unselectedLabelColor": "<Color>",
+  ///   "unselectedLabelStyle": "<TextStyle>",
+  /// }
+  /// ```
+  ///
+  /// See also:
+  ///  * [encodeColor]
+  ///  * [encodeEdgeInsetsGeometry]
+  ///  * [encodeInteractiveInkFeatureFactory]
+  ///  * [encodeWidgetStatePropertyMouseCursor]
+  ///  * [encodeWidgetStatePropertyMouseCursor]
+  ///  * [encodeTabAlignment]
+  ///  * [encodeTabBarIndicatorSize]
+  ///  * [encodeTextScaler]
+  ///  * [encodeTextStyle]
+  static Map<String, dynamic>? encodeTabBarThemeData(TabBarThemeData? value) {
     Map<String, dynamic>? result;
 
     if (value != null) {
@@ -6135,9 +6455,33 @@ class ThemeEncoder {
           value.splashFactory,
         ),
         'tabAlignment': encodeTabAlignment(value.tabAlignment),
+        'textScaler': encodeTextScaler(value.textScaler),
         'unselectedLabelColor': encodeColor(value.unselectedLabelColor),
         'unselectedLabelStyle': encodeTextStyle(value.unselectedLabelStyle),
       };
+    }
+
+    return _stripDynamicNull(result);
+  }
+
+  /// Encodes the given [value] to the String representation.  Supported values
+  /// are:
+  ///  * `elastic`
+  ///  * `linear`
+  ///
+  /// All other values, including `null`, will result in `null`.
+  static String? encodeTabIndicatorAnimation(TabIndicatorAnimation? value) {
+    String? result;
+
+    if (value != null) {
+      switch (value) {
+        case TabIndicatorAnimation.elastic:
+          result = 'elastic';
+          break;
+        case TabIndicatorAnimation.linear:
+          result = 'linear';
+          break;
+      }
     }
 
     return _stripDynamicNull(result);
@@ -6724,6 +7068,25 @@ class ThemeEncoder {
     return _stripDynamicNull(result);
   }
 
+  /// Encodes the given [value] to the String representation.  Supported values
+  /// are:
+  ///  * `noScaling`
+  ///
+  /// All other values, including `null`, will result in `null`.
+  static String? encodeTextScaler(TextScaler? value) {
+    String? result;
+
+    if (value != null) {
+      switch (value) {
+        case TextScaler.noScaling:
+          result = 'noScaling';
+          break;
+      }
+    }
+
+    return _stripDynamicNull(result);
+  }
+
   /// Encodes a given [value] into a JSON compatible Map structure.  This will
   /// return the following structure:
   ///
@@ -7069,14 +7432,14 @@ class ThemeEncoder {
   ///  * [encodeBottomSheetThemeData]
   ///  * [encodeButtonBarThemeData]
   ///  * [encodeButtonThemeData]
-  ///  * [encodeCardTheme]
+  ///  * [encodeCardThemeData]
   ///  * [encodeCheckboxThemeData]
   ///  * [encodeChipThemeData]
   ///  * [encodeColor]
   ///  * [encodeColorScheme]
   ///  * [encodeDatePickerThemeData]
   ///  * [encodeDataTableThemeData]
-  ///  * [encodeDialogTheme]
+  ///  * [encodeDialogThemeData]
   ///  * [encodeDividerThemeData]
   ///  * [encodeDrawerThemeData]
   ///  * [encodeElevatedButtonThemeData]
@@ -7104,7 +7467,7 @@ class ThemeEncoder {
   ///  * [encodeSliderThemeData]
   ///  * [encodeSnackBarThemeData]
   ///  * [encodeSwitchThemeData]
-  ///  * [encodeTabBarTheme]
+  ///  * [encodeTabBarThemeData]
   ///  * [encodeTargetPlatform]
   ///  * [encodeTextButtonThemeData]
   ///  * [encodeTextSelectionThemeData]
@@ -7133,7 +7496,7 @@ class ThemeEncoder {
         'buttonTheme': encodeButtonThemeData(value.buttonTheme),
         'canvasColor': encodeColor(value.canvasColor),
         'cardColor': encodeColor(value.cardColor),
-        'cardTheme': encodeCardTheme(value.cardTheme),
+        'cardTheme': encodeCardThemeData(value.cardTheme),
         'checkboxTheme': encodeCheckboxThemeData(value.checkboxTheme),
         'chipTheme': encodeChipThemeData(value.chipTheme),
         'colorScheme': encodeColorScheme(value.colorScheme),
@@ -7144,7 +7507,7 @@ class ThemeEncoder {
         'datePickerThemeData': encodeDatePickerThemeData(value.datePickerTheme),
         'dataTableTheme': encodeDataTableThemeData(value.dataTableTheme),
         'dialogBackgroundColor': encodeColor(value.dialogBackgroundColor),
-        'dialogTheme': encodeDialogTheme(value.dialogTheme),
+        'dialogTheme': encodeDialogThemeData(value.dialogTheme),
         'disabledColor': encodeColor(value.disabledColor),
         'dividerColor': encodeColor(value.dividerColor),
         'dividerTheme': encodeDividerThemeData(value.dividerTheme),
@@ -7206,7 +7569,7 @@ class ThemeEncoder {
         'splashFactory':
             encodeInteractiveInkFeatureFactory(value.splashFactory),
         'switchTheme': encodeSwitchThemeData(value.switchTheme),
-        'tabBarTheme': encodeTabBarTheme(value.tabBarTheme),
+        'tabBarTheme': encodeTabBarThemeData(value.tabBarTheme),
         'textButtonTheme': encodeTextButtonThemeData(value.textButtonTheme),
         'textSelectionTheme': encodeTextSelectionThemeData(
           value.textSelectionTheme,
@@ -7283,7 +7646,9 @@ class ThemeEncoder {
   ///   "hourMinuteTextStyle": "<TextStyle>",
   ///   "inputDecorationTheme": "<InputDecorationTheme>",
   ///   "padding": "<EdgeInsetsGeometry>",
-  ///   "shape": "<ShapeBorder>"
+  ///   "shape": "<ShapeBorder>",
+  ///   "timeSelectorSeparatorColor": "<WidgetStatePropertyColor>",
+  ///   "timeSelectorSeparatorTextStyle": "<WidgetStatePropertyTextStyle>"
   /// }
   /// ```
   ///
@@ -7294,6 +7659,9 @@ class ThemeEncoder {
   ///  * [encodeInputDecorationTheme]
   ///  * [encodeShapeBorder]
   ///  * [encodeTextStyle]
+  ///  * [encodeWidgetStateColor]
+  ///  * [encodeWidgetStatePropertyColor]
+  ///  * [encodeWidgetStatePropertyTextStyle]
   static Map<String, dynamic>? encodeTimePickerThemeData(
     TimePickerThemeData? value,
   ) {
@@ -7325,6 +7693,12 @@ class ThemeEncoder {
         ),
         'padding': encodeEdgeInsetsGeometry(value.padding as EdgeInsets?),
         'shape': encodeShapeBorder(value.shape),
+        'timeSelectorSeparatorColor': encodeWidgetStatePropertyColor(
+          value.timeSelectorSeparatorColor,
+        ),
+        'timeSelectorSeparatorTextStyle': encodeWidgetStatePropertyTextStyle(
+          value.timeSelectorSeparatorTextStyle,
+        ),
       };
     }
 
