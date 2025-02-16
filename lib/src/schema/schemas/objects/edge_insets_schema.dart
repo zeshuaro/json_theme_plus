@@ -9,18 +9,12 @@ class EdgeInsetsSchema {
     r'$id': id,
     'title': 'EdgeInsets',
     'oneOf': [
-      {
-        'type': 'string',
-      },
-      {
-        'type': 'number',
-      },
+      {'type': 'string'},
+      {'type': 'number'},
       {
         'type': 'array',
         'array': [
-          {
-            'type': 'number',
-          },
+          {'type': 'number'},
         ],
       },
       {

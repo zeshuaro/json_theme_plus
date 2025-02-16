@@ -49,9 +49,7 @@ class SliderThemeDataSchema {
       'rangeValueIndicatorShape': SchemaHelper.objectSchema(
         RangeSliderValueIndicatorShapeSchema.id,
       ),
-      'secondaryActiveTrackColor': SchemaHelper.objectSchema(
-        ColorSchema.id,
-      ),
+      'secondaryActiveTrackColor': SchemaHelper.objectSchema(ColorSchema.id),
       'showValueIndicator': SchemaHelper.objectSchema(
         ShowValueIndicatorSchema.id,
       ),
