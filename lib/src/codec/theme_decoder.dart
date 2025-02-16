@@ -13118,7 +13118,6 @@ class ThemeDecoder {
   ///   "cupertinoOverrideTheme": "<CupertinoThemeData>",
   ///   "datePickerTheme": "<DatePickerThemeData>",
   ///   "dataTableTheme": "<DataTableThemeData>",
-  ///   "dialogBackgroundColor": "<Color>",
   ///   "dialogTheme": "<DialogTheme>",
   ///   "disabledColor": "<Color>",
   ///   "dividerColor": "<Color>",
@@ -13345,10 +13344,6 @@ class ThemeDecoder {
         ),
         dataTableTheme: decodeDataTableThemeData(
           value['dataTableTheme'],
-          validate: false,
-        ),
-        dialogBackgroundColor: decodeColor(
-          value['dialogBackgroundColor'],
           validate: false,
         ),
         dialogTheme: decodeDialogTheme(

@@ -45,7 +45,6 @@ class ThemeDataSchema {
         DatePickerThemeDataSchema.id,
       ),
       'dataTableTheme': SchemaHelper.objectSchema(DataTableThemeDataSchema.id),
-      'dialogBackgroundColor': SchemaHelper.objectSchema(ColorSchema.id),
       'dialogTheme': SchemaHelper.objectSchema(DialogThemeSchema.id),
       'disabledColor': SchemaHelper.objectSchema(ColorSchema.id),
       'dividerColor': SchemaHelper.objectSchema(ColorSchema.id),
