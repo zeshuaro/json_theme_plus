@@ -34,9 +34,7 @@ class SearchBarThemeDataSchema {
       'shape': SchemaHelper.objectSchema(
         WidgetStatePropertyOutlinedBorderSchema.id,
       ),
-      'side': SchemaHelper.objectSchema(
-        WidgetStatePropertyBorderSideSchema.id,
-      ),
+      'side': SchemaHelper.objectSchema(WidgetStatePropertyBorderSideSchema.id),
       'surfaceTintColor': SchemaHelper.objectSchema(
         WidgetStatePropertyColorSchema.id,
       ),

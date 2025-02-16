@@ -9,9 +9,7 @@ class WidgetStateColorSchema {
     r'$id': id,
     'title': 'WidgetStateColor',
     'anyOf': [
-      {
-        'type': 'string',
-      },
+      {'type': 'string'},
       {
         'type': 'object',
         'properties': {
@@ -25,7 +23,7 @@ class WidgetStateColorSchema {
           'scrolledUnder': SchemaHelper.objectSchema(ColorSchema.id),
           'selected': SchemaHelper.objectSchema(ColorSchema.id),
         },
-      }
+      },
     ],
   };
 }
