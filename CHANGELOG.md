@@ -1,3 +1,31 @@
+## [6.8.0](https://github.com/zeshuaro/json_theme_plus/compare/v6.7.4...v6.8.0) (2025-02-23)
+
+### Features
+
+* merge `json_theme/main` ([#155](https://github.com/zeshuaro/json_theme_plus/issues/155)) ([482034a](https://github.com/zeshuaro/json_theme_plus/commit/482034a4104d80585cfbcb4ac6ea6f1a586ad3ae))
+* **sdk:** update dependency flutter to v3.29.0 ([#153](https://github.com/zeshuaro/json_theme_plus/issues/153)) ([b98dbab](https://github.com/zeshuaro/json_theme_plus/commit/b98dbabb11d09bafd1c8f8cce426e003d2f637a1))
+
+### Bug Fixes
+
+* **sdk:** update dependency dart to >=3.7.0 <4.0.0 ([#151](https://github.com/zeshuaro/json_theme_plus/issues/151)) ([e8db3f3](https://github.com/zeshuaro/json_theme_plus/commit/e8db3f30a35c4b1a3854488d447d2fc7ac0e3cdc))
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#148](https://github.com/zeshuaro/json_theme_plus/issues/148)) ([dca7993](https://github.com/zeshuaro/json_theme_plus/commit/dca79938dbd7faab07f4d04749c37cb6357dc33b))
+* **deps:** update dependency build_runner to v2.4.15 ([#157](https://github.com/zeshuaro/json_theme_plus/issues/157)) ([6cc9884](https://github.com/zeshuaro/json_theme_plus/commit/6cc98847c43d676a955a4cada115ef355a513733))
+* **deps:** update dependency semantic-release to v24.2.2 ([#152](https://github.com/zeshuaro/json_theme_plus/issues/152)) ([3745e34](https://github.com/zeshuaro/json_theme_plus/commit/3745e349dd9f24e8d6a2b18b83154534cf9098e0))
+* **deps:** update dependency semantic-release to v24.2.3 ([#158](https://github.com/zeshuaro/json_theme_plus/issues/158)) ([3b73495](https://github.com/zeshuaro/json_theme_plus/commit/3b734951c0654973a61f17d022e20b79925759c9))
+* **deps:** update dependency semantic-release-pub to v0.10.2 ([#159](https://github.com/zeshuaro/json_theme_plus/issues/159)) ([44778db](https://github.com/zeshuaro/json_theme_plus/commit/44778db63b9537eeba0b337756d5192b1123c8b1))
+* **example/deps:** update dependency dart to >=3.7.0 <4.0.0 ([#150](https://github.com/zeshuaro/json_theme_plus/issues/150)) ([4a68b74](https://github.com/zeshuaro/json_theme_plus/commit/4a68b7415761943809de3d300e73dda32186b01d))
+* **node:** update node.js to v22.14.0 ([#149](https://github.com/zeshuaro/json_theme_plus/issues/149)) ([83f0b24](https://github.com/zeshuaro/json_theme_plus/commit/83f0b24302d938af0b3b751dc52ebf21560a7c0b))
+
+### Continuous Integration
+
+* **deps:** update zeshuaro/github-actions-workflows digest to 9d9d6ec ([#156](https://github.com/zeshuaro/json_theme_plus/issues/156)) ([3ce46b7](https://github.com/zeshuaro/json_theme_plus/commit/3ce46b7c58a60606878d98dda4350a3b6bc6414f))
+* **deps:** update zeshuaro/github-actions-workflows digest to b2dbc93 ([#154](https://github.com/zeshuaro/json_theme_plus/issues/154)) ([d0932fd](https://github.com/zeshuaro/json_theme_plus/commit/d0932fd57247191d984950f5862db1f310ece1ea))
+* **deps:** update zeshuaro/github-actions-workflows digest to d5eb020 ([#161](https://github.com/zeshuaro/json_theme_plus/issues/161)) ([64b42cb](https://github.com/zeshuaro/json_theme_plus/commit/64b42cbfb71f81288e1bbbfd06d9d15735f7c60e))
+* **deps:** update zeshuaro/github-actions-workflows digest to f3ddb04 ([#160](https://github.com/zeshuaro/json_theme_plus/issues/160)) ([84ffafa](https://github.com/zeshuaro/json_theme_plus/commit/84ffafa9ea5c7bf7c607cacb7f94e78698cb508c))
+
 ## [6.7.4](https://github.com/zeshuaro/json_theme_plus/compare/v6.7.3...v6.7.4) (2025-02-09)
 
 ### Bug Fixes
