@@ -1,3 +1,23 @@
+## [6.8.1](https://github.com/zeshuaro/json_theme_plus/compare/v6.8.0...v6.8.1) (2025-03-09)
+
+### Bug Fixes
+
+* **deps:** update dependency json_schema to ^5.2.1 ([#172](https://github.com/zeshuaro/json_theme_plus/issues/172)) ([8ef6b96](https://github.com/zeshuaro/json_theme_plus/commit/8ef6b96df63d2575ebe8b318b5bdce8090f82bcb))
+* **sdk:** update dependency flutter to v3.29.1 ([#171](https://github.com/zeshuaro/json_theme_plus/issues/171)) ([4147b22](https://github.com/zeshuaro/json_theme_plus/commit/4147b22c82c64d8b59a0ca0cffd496e582eeca8c))
+
+### Miscellaneous Chores
+
+* **deps:** lock file maintenance ([#162](https://github.com/zeshuaro/json_theme_plus/issues/162)) ([e47b515](https://github.com/zeshuaro/json_theme_plus/commit/e47b515d937e30cccd9fcedb4cfaa9d639c4eb61))
+* **deps:** lock file maintenance ([#168](https://github.com/zeshuaro/json_theme_plus/issues/168)) ([6d2113c](https://github.com/zeshuaro/json_theme_plus/commit/6d2113c37340dec012c5406094989f791aab6bd3))
+
+### Continuous Integration
+
+* **deps:** update zeshuaro/github-actions-workflows digest to 13ef8aa ([#170](https://github.com/zeshuaro/json_theme_plus/issues/170)) ([c554010](https://github.com/zeshuaro/json_theme_plus/commit/c554010f3225b3d9f73d466e9a7c8e50fa79ac41))
+* **deps:** update zeshuaro/github-actions-workflows digest to 7888d77 ([#166](https://github.com/zeshuaro/json_theme_plus/issues/166)) ([743f4aa](https://github.com/zeshuaro/json_theme_plus/commit/743f4aa47a572defc3cd8c2bf399ea92584fbffd))
+* **deps:** update zeshuaro/github-actions-workflows digest to a9389b6 ([#167](https://github.com/zeshuaro/json_theme_plus/issues/167)) ([ad6d961](https://github.com/zeshuaro/json_theme_plus/commit/ad6d96149c000f9a8b795aed751ad96fe231ce20))
+* **deps:** update zeshuaro/github-actions-workflows digest to ae4a7b7 ([#169](https://github.com/zeshuaro/json_theme_plus/issues/169)) ([d683802](https://github.com/zeshuaro/json_theme_plus/commit/d683802b5c756f56fc4e350acf6ecd3a9841a959))
+* **deps:** update zeshuaro/github-actions-workflows digest to b9a6ba1 ([#163](https://github.com/zeshuaro/json_theme_plus/issues/163)) ([69400af](https://github.com/zeshuaro/json_theme_plus/commit/69400afd6cc3e45ed665cdb9f7b5e0380ac18366))
+
 ## [6.8.0](https://github.com/zeshuaro/json_theme_plus/compare/v6.7.4...v6.8.0) (2025-02-23)
 
 ### Features
