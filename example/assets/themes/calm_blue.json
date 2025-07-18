@@ -1,0 +1,13 @@
+{
+  "buttonTheme": {
+    "buttonColor": "#0d47a1",
+    "textTheme": "primary"
+  },
+  "canvasColor": "#ffffff",
+  "disabledColor": "#e0e0e0",
+  "fontFamily": "lato",
+  "iconTheme": {
+    "color": "#37474f"
+  },
+  "primaryColor": "#37474f"
+}
