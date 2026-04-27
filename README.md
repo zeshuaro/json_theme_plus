@@ -1,4 +1,4 @@
-# json_theme
+# json_theme_plus
 
 [![pub package](https://img.shields.io/pub/v/json_theme_plus.svg)](https://pub.dartlang.org/packages/json_theme_plus)
 [![docs](https://img.shields.io/badge/docs-latest-blue.svg)](https://pub.dev/documentation/json_theme_plus/latest/)
@@ -52,7 +52,7 @@ dependencies:
 The framework accepts both JSON-compatible objects as well as actual concrete instances being passed to the `decode` functions.  For example, the following will properly decode:
 
 ```dart
-var appBarTheme = ThemeDecoder.decodeAppBarTheme({
+var appBarTheme = ThemeDecoder.instance.decodeAppBarTheme({
     'brightness': Brightness.dark,
     'color': '#ffdddddd'
   }, 

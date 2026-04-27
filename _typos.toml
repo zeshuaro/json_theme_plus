@@ -1,6 +1,2 @@
 [files]
-extend-exclude = [
-    "CHANGELOG.md",
-    "**/ios/**",
-    "**/macos/**",
-]
+extend-exclude = ["CHANGELOG.md", "**/ios/**", "**/macos/**"]

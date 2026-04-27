@@ -1,4 +1,4 @@
-import 'package:json_theme_plus/json_theme_schemas.dart';
+import 'package:json_theme_plus/json_theme_plus.dart';
 
 class SchemaCache {
   factory SchemaCache() => _instance;
