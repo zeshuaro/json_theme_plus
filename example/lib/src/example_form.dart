@@ -214,58 +214,45 @@ class _ExampleFormState extends State<ExampleForm> {
                 value: _countryValue,
               ),
               const SizedBox(height: 16.0),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                      Radio(
-                        groupValue: _radioValue,
-                        onChanged:
-                            (value) =>
-                                setState(() => _radioValue = value?.toString()),
-                        value: 'one',
-                      ),
-                      const SizedBox(width: 16.0),
-                      const Text('One'),
-                    ],
-                  ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                      Radio(
-                        groupValue: _radioValue,
-                        onChanged:
-                            (value) =>
-                                setState(() => _radioValue = value?.toString()),
-                        value: 'two',
-                      ),
-                      const SizedBox(width: 16.0),
-                      const Text('Two'),
-                    ],
-                  ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                      Radio(
-                        groupValue: _radioValue,
-                        onChanged:
-                            (value) =>
-                                setState(() => _radioValue = value?.toString()),
-                        value: 'three',
-                      ),
-                      const SizedBox(width: 16.0),
-                      const Text('Three'),
-                    ],
-                  ),
-                ],
+              RadioGroup(
+                groupValue: _radioValue,
+                onChanged:
+                    (value) => setState(() => _radioValue = value?.toString()),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        Radio(value: 'one'),
+                        const SizedBox(width: 16.0),
+                        const Text('One'),
+                      ],
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        Radio(value: 'two'),
+                        const SizedBox(width: 16.0),
+                        const Text('Two'),
+                      ],
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        Radio(value: 'three'),
+                        const SizedBox(width: 16.0),
+                        const Text('Three'),
+                      ],
+                    ),
+                  ],
+                ),
               ),
               const SizedBox(height: 16.0),
               DropdownButton<String>(
@@ -326,32 +313,44 @@ class _ExampleFormState extends State<ExampleForm> {
                 ],
               ),
               const SizedBox(height: 16.0),
-              const Row(
+              Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  Radio(groupValue: '1', onChanged: null, value: '1'),
+                  RadioGroup(
+                    groupValue: '1',
+                    onChanged: (_) {},
+                    child: Radio(enabled: false, value: '1'),
+                  ),
                   SizedBox(width: 16.0),
                   Text('Disabled 1'),
                 ],
               ),
-              const Row(
+              Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  Radio(groupValue: '2', onChanged: null, value: '2'),
+                  RadioGroup(
+                    groupValue: '2',
+                    onChanged: (_) {},
+                    child: Radio(enabled: false, value: '2'),
+                  ),
                   SizedBox(width: 16.0),
                   Text('Disabled 2'),
                 ],
               ),
-              const Row(
+              Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  Radio(groupValue: '3', onChanged: null, value: '3'),
+                  RadioGroup(
+                    groupValue: '3',
+                    onChanged: (_) {},
+                    child: Radio(enabled: false, value: '3'),
+                  ),
                   SizedBox(width: 16.0),
                   Text('Disabled 3'),
                 ],

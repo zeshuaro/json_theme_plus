@@ -35,7 +35,8 @@ class _RootPageState extends State<RootPage> {
     final themeJson = json.decode(themeStr);
 
     final theme =
-        ThemeDecoder.decodeThemeData(themeJson, validate: true) ?? ThemeData();
+        ThemeDecoder().decodeThemeData(themeJson, validate: true) ??
+        ThemeData();
 
     if (mounted) {
       await navigator.push(

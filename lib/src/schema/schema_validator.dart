@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:json_class/json_class.dart';
 import 'package:json_schema/json_schema.dart';
-import 'package:json_theme_plus/json_theme_schemas.dart';
+import 'package:json_theme_plus/json_theme_plus.dart';
 import 'package:logging/logging.dart';
 
 /// Schema validator that can validate the JSON Theme objects while also being
@@ -101,10 +101,9 @@ class SchemaValidator {
         refProvider: refProvider,
       );
 
-      var removed =
-          value is Map
-              ? JsonClass.removeNull(Map<String, dynamic>.from(value))
-              : value;
+      var removed = value is Map
+          ? JsonClass.removeNull(Map<String, dynamic>.from(value))
+          : value;
 
       if (removed == null && value is Map) {
         removed = {};
