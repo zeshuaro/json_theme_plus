@@ -1,0 +1,6 @@
+targets:
+  $default:
+    builders:
+      json_theme_codegen:decoder_builder:
+        generate_for:
+          - lib/**
