@@ -24,3 +24,6 @@ dev_dependencies:
     sdk: flutter
   json_theme_codegen: 3.0.0
   recase: 4.1.0
+
+false_secrets:
+  - /node_modules
