@@ -1,3 +1,34 @@
+## [7.0.0](https://github.com/zeshuaro/json_theme_plus/compare/v6.8.2...v7.0.0) (2026-04-27)
+
+### ⚠ BREAKING CHANGES
+
+* update with latest changes from upstream repository (#199)
+
+### Features
+
+* update with latest changes from upstream repository ([#199](https://github.com/zeshuaro/json_theme_plus/issues/199)) ([cbe6873](https://github.com/zeshuaro/json_theme_plus/commit/cbe68730da01c43c1e1574363fd2a652346cdedd))
+
+### Bug Fixes
+
+* **sdk:** update dependency dart to >=3.9.4 <4.0.0 ([#179](https://github.com/zeshuaro/json_theme_plus/issues/179)) ([760abdc](https://github.com/zeshuaro/json_theme_plus/commit/760abdc034cc3ec32c44a8d870da472e023b4cc8))
+* **sdk:** update dependency flutter to v3.38.10 ([#203](https://github.com/zeshuaro/json_theme_plus/issues/203)) ([b65ed8b](https://github.com/zeshuaro/json_theme_plus/commit/b65ed8b9d58506103340a0a078abf4da2809e959))
+
+### Documentation
+
+* **license:** update year to 2026 ([#198](https://github.com/zeshuaro/json_theme_plus/issues/198)) ([8df0c39](https://github.com/zeshuaro/json_theme_plus/commit/8df0c391e5ac0c1c3df1084ad05fe7cb72dcb07b))
+
+### Miscellaneous Chores
+
+* **deps:** update dependency build_runner to v2.13.1 ([#188](https://github.com/zeshuaro/json_theme_plus/issues/188)) ([5122b3d](https://github.com/zeshuaro/json_theme_plus/commit/5122b3db2cea11cd99fb51e03cd26d77c7aa4571))
+* **deps:** update dependency conventional-changelog-conventionalcommits to v9 ([#189](https://github.com/zeshuaro/json_theme_plus/issues/189)) ([58ab53b](https://github.com/zeshuaro/json_theme_plus/commit/58ab53b3e4c12fb5febcd70c247b48783eec9ef0))
+* **deps:** update dependency semantic-release-pub to v0.11.14 ([#202](https://github.com/zeshuaro/json_theme_plus/issues/202)) ([a133a24](https://github.com/zeshuaro/json_theme_plus/commit/a133a24dbe2470496903c1cb48c7f868c397e610))
+* **example/deps:** pin dependency flutter_lints to 6.0.0 ([#190](https://github.com/zeshuaro/json_theme_plus/issues/190)) ([a237cdd](https://github.com/zeshuaro/json_theme_plus/commit/a237cdd96a0e55b4243bd87c6685812a03c68053))
+* **example/deps:** update dependency dart to >=3.7.3 <4.0.0 ([#177](https://github.com/zeshuaro/json_theme_plus/issues/177)) ([5933835](https://github.com/zeshuaro/json_theme_plus/commit/593383530e015114c398771f4bfef0672d12dfe5))
+* **example/deps:** update dependency google_fonts to ^6.3.3 ([#184](https://github.com/zeshuaro/json_theme_plus/issues/184)) ([ebfa71c](https://github.com/zeshuaro/json_theme_plus/commit/ebfa71cdc0904607c5b066cd49c9775c849d08d2))
+* **example:** remove example android project file ([#200](https://github.com/zeshuaro/json_theme_plus/issues/200)) ([6d31a47](https://github.com/zeshuaro/json_theme_plus/commit/6d31a47d9f70bb7881cee750b7118b2578d78349))
+* **node:** update node.js to v24.15.0 ([#204](https://github.com/zeshuaro/json_theme_plus/issues/204)) ([7420880](https://github.com/zeshuaro/json_theme_plus/commit/7420880c7a45d03cfc16a07143e684ab8c30dc92))
+* **pubspec:** add `node_modules` folder as `false_secrets` ([#201](https://github.com/zeshuaro/json_theme_plus/issues/201)) ([4f64ae5](https://github.com/zeshuaro/json_theme_plus/commit/4f64ae59e7a58025e9a7090bb117826fc7434d2c))
+
 ## [6.8.2](https://github.com/zeshuaro/json_theme_plus/compare/v6.8.1...v6.8.2) (2026-04-14)
 
 ### Bug Fixes
