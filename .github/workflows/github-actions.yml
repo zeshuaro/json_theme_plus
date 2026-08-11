@@ -17,6 +17,7 @@ jobs:
   flutter-package:
     uses: zeshuaro/github-actions-workflows/.github/workflows/flutter-package.yml@c09d8531dcded3a74c78cdbe23a3147367a5f039 # main
     with:
+      run-build-runner: true
       release: ${{ (github.ref == 'refs/heads/main') && (contains(fromJSON('["workflow_dispatch", "schedule"]'), github.event_name)) }}
     secrets:
       GH_APP_ID: ${{ secrets.GH_APP_ID }}
