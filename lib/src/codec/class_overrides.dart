@@ -15,20 +15,6 @@ class GradientTransformCodec extends material.GradientRotation {
   const GradientTransformCodec({required double radians}) : super(radians);
 }
 
-class IconDataCodec extends material.IconData {
-  const IconDataCodec({
-    required int codePoint,
-    String? fontFamily,
-    String? fontPackage,
-    bool matchTextDirection = false,
-  }) : super(
-         codePoint,
-         fontFamily: fontFamily,
-         fontPackage: fontPackage,
-         matchTextDirection: matchTextDirection,
-       );
-}
-
 class LocaleCodec extends material.Locale {
   LocaleCodec({String? countryCode, required String languageCode})
     : super(languageCode, countryCode);
