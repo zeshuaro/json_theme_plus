@@ -1143,9 +1143,12 @@ abstract class _ThemeDecoderFunctions {
         ),
       );
       result = IconData(
+        // ignore: non_const_argument_for_const_parameter
         JsonClass.maybeParseInt(value['codePoint'])!,
+        // ignore: non_const_argument_for_const_parameter
         fontFamily: value['fontFamily'],
         fontFamilyFallback: value['fontFamilyFallback'],
+        // ignore: non_const_argument_for_const_parameter
         fontPackage: value['fontPackage'],
         matchTextDirection: JsonClass.parseBool(value['matchTextDirection']),
       );
