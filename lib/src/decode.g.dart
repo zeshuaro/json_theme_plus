@@ -1,8 +1,8 @@
 // Dart SDK: 3.13.3 (stable) (Tue Sep 1 01:07:17 2026 -0700) on "linux_x64"
 // Flutter SDK:
 //   Flutter 3.47.4 • channel stable • https://github.com/flutter/flutter.git
-//   Framework • revision 9584c6713b (3 days ago) • 2026-09-10 15:25:10 -0700
-//   Engine • hash 0e228ec8c8d2abc9fcf1d053e8a40665bb859ec7 (revision 06a2e2a110) (10 days ago) • 2026-09-03 16:07:13.000Z
+//   Framework • revision 9584c6713b (5 days ago) • 2026-09-10 15:25:10 -0700
+//   Engine • hash 0e228ec8c8d2abc9fcf1d053e8a40665bb859ec7 (revision 06a2e2a110) (12 days ago) • 2026-09-03 16:07:13.000Z
 //   Tools • Dart 3.13.3 • DevTools 2.60.0
 
 const kThemeDecoders = <String, String>{
