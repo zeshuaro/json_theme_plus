@@ -6,12 +6,12 @@ part of 'theme_decoder.dart';
 // Generator: CodecLibraryBuilder
 // **************************************************************************
 
-// Dart SDK: 3.13.4 (stable) (Tue Sep 15 01:01:15 2026 -0700) on "linux_x64"
+// Dart SDK: 3.13.5 (stable) (Tue Sep 29 01:00:52 2026 -0700) on "linux_x64"
 // Flutter SDK:
-//   Flutter 3.47.5 • channel stable • https://github.com/flutter/flutter.git
-//   Framework • revision 6a19cca564 (10 days ago) • 2026-09-17 14:13:22 -0400
-//   Engine • hash ab598368592da0064197e2bc15c7f5b0a2c6bb1f (revision af7e796e16) (11 days ago) • 2026-09-16 18:35:09.000Z
-//   Tools • Dart 3.13.4 • DevTools 2.60.0
+//   Flutter 3.47.6 • channel stable • https://github.com/flutter/flutter.git
+//   Framework • revision 5fc346839b (2 days ago) • 2026-09-30 15:02:49 -0700
+//   Engine • hash b8c8d3d8d5d0095127057f8a29ca8cc53da2167c (revision 692136cb65) (2 days ago) • 2026-09-30 00:56:59.000Z
+//   Tools • Dart 3.13.5 • DevTools 2.60.0
 
 // ignore_for_file: avoid_init_to_null
 // ignore_for_file: prefer_const_constructors
