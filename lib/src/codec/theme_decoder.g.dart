@@ -8,9 +8,9 @@ part of 'theme_decoder.dart';
 
 // Dart SDK: 3.13.5 (stable) (Tue Sep 29 01:00:52 2026 -0700) on "linux_x64"
 // Flutter SDK:
-//   Flutter 3.47.6 • channel stable • https://github.com/flutter/flutter.git
-//   Framework • revision 5fc346839b (7 days ago) • 2026-09-30 15:02:49 -0700
-//   Engine • hash b8c8d3d8d5d0095127057f8a29ca8cc53da2167c (revision 692136cb65) (8 days ago) • 2026-09-30 00:56:59.000Z
+//   Flutter 3.47.7 • channel stable • https://github.com/flutter/flutter.git
+//   Framework • revision abaf9c5237 (17 hours ago) • 2026-10-08 09:51:21 -0700
+//   Engine • hash d8a2d6c768c334d53e16277f837970ffa1e2de81 (revision deb287481e) (46 hours ago) • 2026-10-07 17:09:12.000Z
 //   Tools • Dart 3.13.5 • DevTools 2.60.0
 
 // ignore_for_file: avoid_init_to_null
