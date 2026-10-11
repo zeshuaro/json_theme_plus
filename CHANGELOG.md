@@ -1,3 +1,13 @@
+## [7.1.2](https://github.com/zeshuaro/json_theme_plus/compare/v7.1.1...v7.1.2) (2026-10-11)
+
+### Bug Fixes
+
+* **sdk:** update dependency flutter to v3.47.7 ([#300](https://github.com/zeshuaro/json_theme_plus/issues/300)) ([97f2486](https://github.com/zeshuaro/json_theme_plus/commit/97f2486571facdae259181f8e932286eeee12be5))
+
+### Continuous Integration
+
+* **deps:** update zeshuaro/github-actions-workflows digest to be1a900 ([#299](https://github.com/zeshuaro/json_theme_plus/issues/299)) ([d569050](https://github.com/zeshuaro/json_theme_plus/commit/d5690500186918d003b8f254aeb3461c9c64698f))
+
 ## [7.1.1](https://github.com/zeshuaro/json_theme_plus/compare/v7.1.0...v7.1.1) (2026-10-04)
 
 ### Bug Fixes
