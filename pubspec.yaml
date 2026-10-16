@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  json_class: ^3.0.1
+  json_class: ^4.0.0
   json_schema: ^5.2.2
   json_theme_annotation: ^2.0.0
   logging: ^1.3.0
