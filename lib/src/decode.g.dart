@@ -1,9 +1,9 @@
-// Dart SDK: 3.13.5 (stable) (Tue Sep 29 01:00:52 2026 -0700) on "linux_x64"
+// Dart SDK: 3.13.7 (stable) (Thu Oct 22 14:28:57 2026 -0700) on "linux_x64"
 // Flutter SDK:
-//   Flutter 3.47.7 • channel stable • https://github.com/flutter/flutter.git
-//   Framework • revision abaf9c5237 (2 weeks ago) • 2026-10-08 09:51:21 -0700
-//   Engine • hash d8a2d6c768c334d53e16277f837970ffa1e2de81 (revision deb287481e) (15 days ago) • 2026-10-07 17:09:12.000Z
-//   Tools • Dart 3.13.5 • DevTools 2.60.0
+//   Flutter 3.47.8 • channel stable • https://github.com/flutter/flutter.git
+//   Framework • revision 737ba8f885 (17 hours ago) • 2026-10-22 21:37:31 -0700
+//   Engine • hash dfd2e6cb7d319db05e3bf1503f3e2ac60f6288a2 (revision cf636b1dfb) (25 hours ago) • 2026-10-23 02:13:38.000Z
+//   Tools • Dart 3.13.7 • DevTools 2.60.0
 
 const kThemeDecoders = <String, String>{
   'ActionIconThemeData': 'ThemeDecoder.instance.decodeActionIconThemeData',
